@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "AncizarSerif-Black";
+  src: url("/fonts/AncizarSerif-Black.ttf") format("truetype");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "AncizarSerif-Black-Italic";
+  src: url("/fonts/AncizarSerif-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "AncizarSerif-Bold";
+  src: url("/fonts/AncizarSerif-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "AncizarSerif-Bold-Italic";
+  src: url("/fonts/AncizarSerif-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "AncizarSerif-ExtraBold";
+  src: url("/fonts/AncizarSerif-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "AncizarSerif-ExtraBold-Italic";
+  src: url("/fonts/AncizarSerif-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "AncizarSerif-Italic";
+  src: url("/fonts/AncizarSerif-Italic.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "AncizarSerif-Light";
+  src: url("/fonts/AncizarSerif-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "AncizarSerif-Light-Italic";
+  src: url("/fonts/AncizarSerif-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "AncizarSerif-Medium";
+  src: url("/fonts/AncizarSerif-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "AncizarSerif-Medium-Italic";
+  src: url("/fonts/AncizarSerif-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "AncizarSerif-Regular";
+  src: url("/fonts/AncizarSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "AncizarSerif-SemiBold";
+  src: url("/fonts/AncizarSerif-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "AncizarSerif-SemiBold-Italic";
+  src: url("/fonts/AncizarSerif-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+}
+
+body {
+  background-color: #eeeeee80;
+}
+
+a {
+  text-decoration: none;
+}
+
+.font-500 {
+  font-family: "AncizarSerif-Medium" !important;
+}
+
+.font-700 {
+  font-family: "AncizarSerif-Bold" !important;
+}
