@@ -1,4 +1,5 @@
 import { NewsCard } from "@/components/Cards/NewsCard";
+import { Layout } from "@/components/Layout/Layout";
 import { Container, Typography } from "@mui/material";
 import { Grid } from "@mui/system";
 import axios from "axios";
@@ -8,18 +9,20 @@ const Category = ({ posts }) => {
   console.log(posts, "Manan Tandon");
   return (
     <>
-      <Container maxWidth="xl">
-        <Typography fontSize="28px" sx={{ py: 2 }}>
-          {posts?.category?.name}
-        </Typography>
-        <Grid container sx={{ bgcolor: "#FFFFFF" }}>
-          {posts?.data?.map((item, key) => (
-            <Grid item size={{ xs: 12, md: 3 }} key={key}>
-              <NewsCard news={item} />
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+      <Layout>
+        <Container maxWidth="xl">
+          <Typography fontSize="28px" sx={{ py: 2 }}>
+            {posts?.category?.name}
+          </Typography>
+          <Grid container sx={{ bgcolor: "#FFFFFF" }}>
+            {posts?.data?.map((item, key) => (
+              <Grid item size={{ xs: 12, md: 3 }} key={key}>
+                <NewsCard news={item} />
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Layout>
     </>
   );
 };
