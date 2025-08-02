@@ -39,7 +39,7 @@ export const Interviews = () => {
               }}
             >
               <Typography
-                fontSize="52px"
+                fontSize={{ xs: "32px", md: "52px" }}
                 className="font-700"
                 sx={{ color: "#080808" }}
               >

@@ -83,7 +83,12 @@
 }
 
 body {
-  background-color: #eeeeee80;
+  background-color: #eeeeee80; /* For browsers that do not support gradients */
+  background-image: linear-gradient(
+    to bottom right,
+    #eeeeee80 35%,
+    #1877f280 200%
+  );
 }
 
 a {

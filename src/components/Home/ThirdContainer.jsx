@@ -12,14 +12,22 @@ export const ThirdContainer = () => {
             <Grid
               item
               size={{ xs: 12, md: 5.96 }}
-              sx={{ bgcolor: "#FFFFFF", borderRadius: "7px" }}
+              sx={{
+                bgcolor: "#FFFFFF",
+                borderRadius: "7px",
+                border: "1.5px solid #e8e8e8",
+              }}
             >
               <SocialStocks />
             </Grid>
             <Grid
               item
               size={{ xs: 12, md: 5.96 }}
-              sx={{ bgcolor: "#FFFFFF", borderRadius: "7px" }}
+              sx={{
+                bgcolor: "#FFFFFF",
+                borderRadius: "7px",
+                border: "1.5px solid #e8e8e8",
+              }}
             >
               <Governance />
             </Grid>

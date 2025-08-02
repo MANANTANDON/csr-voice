@@ -30,7 +30,15 @@ export const Sectors = () => {
       {!loading && (
         <Box sx={{ my: 5 }}>
           <Container maxWidth="xl">
-            <Box sx={{ bgcolor: "#FFFFFF", px: 2, py: 1, borderRadius: "7px" }}>
+            <Box
+              sx={{
+                bgcolor: "#FFFFFF",
+                px: 2,
+                py: 1,
+                borderRadius: "7px",
+                border: "1.5px solid #e8e8e8",
+              }}
+            >
               <Box
                 sx={{
                   display: "flex",
@@ -41,7 +49,7 @@ export const Sectors = () => {
                 }}
               >
                 <Typography
-                  fontSize="52px"
+                  fontSize={{ xs: "32px", md: "52px" }}
                   className="font-700"
                   sx={{ color: "#080808" }}
                 >
@@ -50,7 +58,7 @@ export const Sectors = () => {
                 <Typography
                   component="a"
                   href={`/category/${category?.slug}`}
-                  fontSize="18px"
+                  fontSize={{ xs: "16px", md: "18px" }}
                   sx={{
                     color: "#1877F2",
                     "&:hover": {
