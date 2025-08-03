@@ -82,7 +82,7 @@
   font-weight: 600;
 }
 
-body {
+html {
   background-color: #eeeeee80; /* For browsers that do not support gradients */
   background-image: linear-gradient(
     to bottom right,
