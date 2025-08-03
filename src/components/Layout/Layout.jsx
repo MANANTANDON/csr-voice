@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
-import { Header } from "./Header/header";
+import { Header } from "./Header/Header";
 import Image from "next/image";
 
 export const Layout = ({ children }) => {
