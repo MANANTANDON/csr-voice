@@ -5,12 +5,17 @@ import Image from "next/image";
 
 export const Layout = ({ children }) => {
   return (
-    <Box sx={{ m: -1, position: "relative" }}>
+    <Box
+      sx={{
+        m: -1,
+        position: "relative",
+      }}
+    >
       <Box
         sx={{
           position: "absolute",
           zIndex: -1,
-          top: { xs: 300, md: 500 },
+          top: { xs: 300, md: 10 },
           left: -350,
         }}
       >
