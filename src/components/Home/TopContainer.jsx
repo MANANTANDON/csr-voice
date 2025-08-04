@@ -4,7 +4,6 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 
 export const TopContainer = ({ posts }) => {
-  console.log(posts, "MANAN TANDON");
   return (
     <Box sx={{ my: { xs: 2, md: 5 } }}>
       <Container maxWidth="xl">

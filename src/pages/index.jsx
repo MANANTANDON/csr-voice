@@ -6,8 +6,9 @@ import { TopContainer } from "@/components/Home/TopContainer";
 import { Layout } from "@/components/Layout/Layout";
 import axios from "axios";
 import Head from "next/head";
+import { parseStringPromise } from "xml2js";
 
-export default function Home({ posts }) {
+export default function Home({ posts, rssItems }) {
   return (
     <>
       <Head>
@@ -131,7 +132,7 @@ export default function Home({ posts }) {
           }}
         />
       </Head>
-      <Layout>
+      <Layout marqueeData={rssItems}>
         <TopContainer posts={posts?.data} />
         <Sectors />
         <ThirdContainer />
@@ -144,24 +145,39 @@ export default function Home({ posts }) {
 
 export async function getServerSideProps() {
   try {
-    const page = 1; // You can make this dynamic using context.query if needed
-    const response = await axios.get(
+    const page = 1;
+
+    // Fetch custom posts from your CMS
+    const postsResponse = await axios.get(
       `https://dev.csrvoice.com/wp-json/custom/v1/posts?page=${page}&per_page=10`
     );
 
+    // Fetch RSS feed from TOI
+    const rssResponse = await axios.get(
+      "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
+    );
+
+    const parsedRSS = await parseStringPromise(rssResponse.data, {
+      explicitArray: false,
+    });
+
+    const rssItems = parsedRSS?.rss?.channel?.item?.slice(0, 5) || [];
+
     return {
       props: {
-        posts: response.data,
+        posts: postsResponse.data,
+        rssItems,
         error: null,
       },
     };
   } catch (error) {
-    console.error("Error fetching posts:", error);
+    console.error("Error fetching data:", error);
 
     return {
       props: {
         posts: [],
-        error: "Failed to fetch posts",
+        rssItems: [],
+        error: "Failed to fetch data",
       },
     };
   }
