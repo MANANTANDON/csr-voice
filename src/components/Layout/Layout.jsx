@@ -3,8 +3,9 @@ import React from "react";
 import { Header } from "./Header/Header";
 import Image from "next/image";
 import { Footer } from "./Footer/Footer";
+import { TopMarquee } from "../Home/TopMarquee";
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, marqueeData }) => {
   return (
     <Box
       sx={{
@@ -28,7 +29,9 @@ export const Layout = ({ children }) => {
           layout="intrinsic"
         />
       </Box>
+
       <Header />
+      <TopMarquee marqueeData={marqueeData} />
       {children}
       <Footer />
     </Box>

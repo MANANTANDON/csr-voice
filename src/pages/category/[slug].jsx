@@ -4,12 +4,12 @@ import { Container, Typography } from "@mui/material";
 import { Box, Grid } from "@mui/system";
 import axios from "axios";
 import React from "react";
+import { parseStringPromise } from "xml2js";
 
-const Category = ({ posts }) => {
-  console.log(posts.data.length);
+const Category = ({ posts, rssItems }) => {
   return (
     <>
-      <Layout>
+      <Layout marqueeData={rssItems}>
         <Box
           sx={{
             my: { xs: 2, md: 5 },
@@ -56,23 +56,37 @@ export default Category;
 
 export async function getServerSideProps({ query }) {
   try {
+    // 1. Fetch category-specific posts
     const response = await axios.get(
       `https://dev.csrvoice.com/wp-json/custom/v1/posts/category/${query?.slug}?page=1&per_page=10`
     );
 
+    // 2. Fetch TOI RSS feed
+    const rssResponse = await axios.get(
+      "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
+    );
+
+    const parsedRSS = await parseStringPromise(rssResponse.data, {
+      explicitArray: false,
+    });
+
+    const rssItems = parsedRSS?.rss?.channel?.item?.slice(0, 5) || [];
+
     return {
       props: {
         posts: response.data,
+        rssItems, // You can now use this if needed
         error: null,
       },
     };
   } catch (error) {
-    console.error("Error fetching posts:", error);
+    console.error("Error fetching data:", error);
 
     return {
       props: {
         posts: [],
-        error: "Failed to fetch posts",
+        rssItems: [],
+        error: "Failed to fetch data",
       },
     };
   }
