@@ -23,3 +23,10 @@ export const MOBILECAT = [
   { name: "Sustainable World", link: "/category/sustainable-word" },
   { name: "Laws", link: "/category/laws" },
 ];
+
+export const MOREMENU = [
+  { name: "About Us", link: "/aboutus" },
+  { name: "Contact", link: "/contact" },
+  { name: "Advertise", link: "/advertise" },
+  { name: "Terms & Conditions", link: "/tnc" },
+];

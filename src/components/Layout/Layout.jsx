@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import React from "react";
 import { Header } from "./Header/Header";
 import Image from "next/image";
+import { Footer } from "./Footer/Footer";
 
 export const Layout = ({ children }) => {
   return (
@@ -29,6 +30,7 @@ export const Layout = ({ children }) => {
       </Box>
       <Header />
       {children}
+      <Footer />
     </Box>
   );
 };
