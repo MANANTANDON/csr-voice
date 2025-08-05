@@ -39,12 +39,16 @@ export const TopContainer = ({ posts }) => {
                   borderRadius: "10px",
                 }}
               >
-                <Image
-                  src={posts[0]?.featured_image}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
-                />
+                <a
+                  href={`/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
+                >
+                  <Image
+                    src={posts[0]?.featured_image}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
+                </a>
                 <Box
                   sx={{
                     position: "absolute",
@@ -67,6 +71,8 @@ export const TopContainer = ({ posts }) => {
                     4d616e616e
                   </Typography>
                   <Typography
+                    component="a"
+                    href={`/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
                     fontSize="30px"
                     lineHeight="35px"
                     className="font-500"
@@ -140,15 +146,21 @@ export const TopContainer = ({ posts }) => {
                         flexShrink: 0,
                       }}
                     >
-                      <Image
-                        src={item?.featured_image}
-                        layout="fill"
-                        objectFit="cover"
-                        objectPosition="center"
-                      />
+                      <a
+                        href={`/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
+                      >
+                        <Image
+                          src={item?.featured_image}
+                          layout="fill"
+                          objectFit="cover"
+                          objectPosition="center"
+                        />
+                      </a>
                     </Box>
                     <Box sx={{ flex: 1, minWidth: 0 }}>
                       <Typography
+                        component="a"
+                        href={`/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
                         fontSize={{ xs: "20px", sm: "20px" }}
                         lineHeight={{ xs: "24px", sm: "24px" }}
                         className="font-500"

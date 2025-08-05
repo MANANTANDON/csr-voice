@@ -20,6 +20,8 @@ export const TopMarquee = ({ marqueeData }) => {
             <Typography
               component="a"
               href={item?.link}
+              target="_blank"
+              rel="noopener noreferrer"
               key={key}
               sx={{ color: "#FFFFFF", fontSize: { xs: "14px", md: "16px" } }}
             >

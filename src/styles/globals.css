@@ -103,3 +103,11 @@ a {
 .font-700 {
   font-family: "AncizarSerif-Bold" !important;
 }
+
+.font-800 {
+  font-family: "AncizarSerif-ExtraBold" !important;
+}
+
+.post-cont {
+  font-size: 18px;
+}
