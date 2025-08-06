@@ -37,7 +37,7 @@ const Category = ({ posts, rssItems }) => {
               >
                 {posts?.category?.name}
               </Typography>
-              <Grid container rowGap={5}>
+              <Grid container rowGap={{ xs: 1, md: 5 }}>
                 {posts?.data?.map((item, key) => (
                   <Grid item size={{ xs: 12, md: 3 }} key={key}>
                     <NewsCard news={item} />

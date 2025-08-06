@@ -22,6 +22,7 @@ export const NewsCard = ({ news }) => {
               height: "200px",
               width: "100%",
               borderRadius: "10px",
+              border: "1.5px solid #eeeeee",
             }}
           >
             <Image
