@@ -15,29 +15,34 @@ export const NewsCard = ({ news }) => {
             },
           }}
         >
-          <Box
-            sx={{
-              position: "relative",
-              overflow: "hidden",
-              height: "200px",
-              width: "100%",
-              borderRadius: "10px",
-              border: "1.5px solid #eeeeee",
-            }}
-          >
-            <Image
-              src={news?.featured_image}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
-            />
-          </Box>
+          <a href={`/${news?.categories[0]?.slug}/${news?.slug}/${news?.id}`}>
+            <Box
+              sx={{
+                position: "relative",
+                overflow: "hidden",
+                height: "200px",
+                width: "100%",
+                borderRadius: "10px",
+                border: "1.5px solid #eeeeee",
+              }}
+            >
+              <Image
+                src={news?.featured_image}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center"
+                alt={news?.title}
+              />
+            </Box>
+          </a>
           <Typography
             fontSize={{ xs: "12px", sm: "14px" }}
             sx={{ color: "#000000", my: 1 }}
           >
             <Typography
               variant="span"
+              component={"a"}
+              href={`/category/${news?.categories[0]?.slug}`}
               sx={{ color: "#1877F2" }}
               fontSize={{ xs: "12px", sm: "14px" }}
             >
