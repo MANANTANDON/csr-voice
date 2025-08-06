@@ -1,5 +1,6 @@
 import { Layout } from "@/components/Layout/Layout";
 import { PostPage } from "@/components/Post/PostPage";
+import { RelatedNews } from "@/components/Post/RelatedNews";
 import axios from "axios";
 import React from "react";
 import { parseStringPromise } from "xml2js";
@@ -9,6 +10,7 @@ const Index = ({ post, rssItems }) => {
     <>
       <Layout marqueeData={rssItems}>
         <PostPage post={post?.data} />
+        <RelatedNews category={post} />
       </Layout>
     </>
   );
