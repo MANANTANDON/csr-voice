@@ -107,9 +107,19 @@ export const TopContainer = ({ posts }) => {
                     {posts[0]?.excerpt}
                   </Typography>
                   <Typography
-                    fontSize="12px"
-                    sx={{ color: "#1877F2", mt: 1, mb: 2 }}
-                  >{`${posts[0]?.categories[0]?.name} • 10 min read`}</Typography>
+                    fontSize={{ xs: "11px", sm: "12px" }}
+                    sx={{ color: "#FFFFFF", my: 1 }}
+                  >
+                    <Typography
+                      component={"a"}
+                      href={`/category/${posts[0]?.categories[0]?.slug}`}
+                      sx={{ color: "#1877F2" }}
+                      fontSize={{ xs: "11px", sm: "12px" }}
+                    >
+                      {posts[0]?.categories[0]?.name}
+                    </Typography>
+                    {" • 10 min read"}
+                  </Typography>
                 </Box>
               </Box>
             </Grid>
@@ -184,7 +194,8 @@ export const TopContainer = ({ posts }) => {
                         sx={{ color: "#000000", my: 1 }}
                       >
                         <Typography
-                          variant="span"
+                          component={"a"}
+                          href={`/category/${item?.categories[0]?.slug}`}
                           sx={{ color: "#1877F2" }}
                           fontSize={{ xs: "11px", sm: "12px" }}
                         >
