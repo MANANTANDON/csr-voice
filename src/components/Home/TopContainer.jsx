@@ -108,7 +108,7 @@ export const TopContainer = ({ posts }) => {
                   </Typography>
                   <Typography
                     fontSize={{ xs: "11px", sm: "12px" }}
-                    sx={{ color: "#FFFFFF", my: 1 }}
+                    sx={{ color: "#FFFFFF", mt: 1, mb: 2 }}
                   >
                     <Typography
                       component={"a"}
