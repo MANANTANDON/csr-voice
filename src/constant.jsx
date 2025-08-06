@@ -1,5 +1,6 @@
 export const CATMENU = [
   { name: "Home", link: "/" },
+  { name: "News", link: "/category/news" },
   { name: "Governance", link: "/category/governance" },
   { name: "Sustainable World", link: "/category/sustainable-word" },
   { name: "Laws", link: "/category/laws" },
@@ -19,6 +20,7 @@ export const SECTORS = [
 
 export const MOBILECAT = [
   { name: "Home", link: "/" },
+  { name: "News", link: "/category/news" },
   { name: "Governance", link: "/category/governance" },
   { name: "Sustainable World", link: "/category/sustainable-word" },
   { name: "Laws", link: "/category/laws" },

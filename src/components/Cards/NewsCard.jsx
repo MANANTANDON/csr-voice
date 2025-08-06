@@ -45,6 +45,8 @@ export const NewsCard = ({ news }) => {
             {" • 10 min read"}
           </Typography>
           <Typography
+            component={"a"}
+            href={`/${news?.categories[0]?.slug}/${news?.slug}/${news?.id}`}
             fontSize={{ xs: "20px", sm: "22px" }}
             lineHeight={{ xs: "24px", sm: "28px" }}
             className="font-500"

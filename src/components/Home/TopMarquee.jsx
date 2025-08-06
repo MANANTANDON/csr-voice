@@ -23,7 +23,7 @@ export const TopMarquee = ({ marqueeData }) => {
               target="_blank"
               rel="noopener noreferrer"
               key={key}
-              sx={{ color: "#FFFFFF", fontSize: { xs: "14px", md: "16px" } }}
+              sx={{ color: "#FFFFFF", fontSize: { xs: "12px", md: "16px" } }}
             >
               • {item?.title}
             </Typography>
