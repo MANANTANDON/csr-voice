@@ -2,7 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["dev.csrvoice.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "dev.csrvoice.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
