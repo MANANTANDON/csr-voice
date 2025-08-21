@@ -52,27 +52,21 @@ const Search = ({ posts, rssItems, searchtext }) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const { query } = context;
+export async function getServerSideProps({ query }) {
   const searchText = query.text || "";
-
   try {
     // ✅ WP Native Search API
     const postsResponse = await axios.get(
       `https://dev.csrvoice.com/wp-json/custom/v1/search?keyword=${searchText}&page=1&per_page=4`
     );
-
     // ✅ RSS API
     const rssResponse = await axios.get(
       "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
     );
-
     const parsedRSS = await parseStringPromise(rssResponse.data, {
       explicitArray: false,
     });
-
     const rssItems = parsedRSS?.rss?.channel?.item?.slice(0, 5) || [];
-
     return {
       props: {
         posts: postsResponse.data,
@@ -83,7 +77,6 @@ export async function getServerSideProps(context) {
     };
   } catch (error) {
     console.error("Error fetching data:", error);
-
     return {
       props: {
         posts: [],

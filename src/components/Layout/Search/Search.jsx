@@ -46,8 +46,7 @@ export const Search = ({ modalOpen, setModalOpen }) => {
     setError("");
 
     // Navigate to search page with the search term
-    const encodedSearchText = encodeURIComponent(searchText.trim());
-    router.push(`/search/${encodedSearchText}`);
+    router.push(`/search/${searchText}`);
     setModalOpen(false);
   };
 
