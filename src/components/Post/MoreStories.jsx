@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
+import { useDecodeHtml } from "@/hooks/useDecodeHtml";
+import { useReadingTime } from "@/hooks/useReadingtime";
 
 export const MoreStories = () => {
   const [data, setData] = useState();
@@ -85,7 +87,7 @@ export const MoreStories = () => {
                       },
                     }}
                   >
-                    {item?.title}
+                    {useDecodeHtml(item?.title)}
                   </Typography>
                   <Typography
                     fontSize={{ xs: "11px", sm: "12px" }}
@@ -97,9 +99,9 @@ export const MoreStories = () => {
                       sx={{ color: "#1877F2" }}
                       fontSize={{ xs: "11px", sm: "12px" }}
                     >
-                      {item?.categories[0]?.name}
+                      {useDecodeHtml(item?.categories[0]?.name)}
                     </Typography>
-                    {" • 10 min read"}
+                    {` • ${useReadingTime(item?.content)}`}
                   </Typography>
                 </Box>
               </Box>

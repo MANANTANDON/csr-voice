@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
+import { useDecodeHtml } from "@/hooks/useDecodeHtml";
 
 export const Interviews = () => {
   const [posts, setPosts] = useState();
@@ -119,7 +120,7 @@ export const Interviews = () => {
                           my: 1,
                         }}
                       >
-                        {posts[0]?.excerpt}
+                        {useDecodeHtml(posts[0]?.excerpt)}
                       </Typography>
                       <Typography
                         fontSize={{ xs: "11px", sm: "12px" }}

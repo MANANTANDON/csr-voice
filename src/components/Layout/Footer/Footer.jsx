@@ -97,7 +97,14 @@ export const Footer = () => {
               © {currentYear} CSR Voice. All Rights Reserved.
             </Typography>
             <Typography sx={{ fontSize: "14px", color: "#41444B" }}>
-              Powdered by Snowchild Studios
+              Powdered by ©{" "}
+              <Box
+                component={"a"}
+                href="https://snowchildstudio.com"
+                target="_blank"
+              >
+                Snowchild Studios
+              </Box>
             </Typography>
           </Box>
         </Container>

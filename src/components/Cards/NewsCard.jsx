@@ -1,3 +1,5 @@
+import { useDecodeHtml } from "@/hooks/useDecodeHtml";
+import { useReadingTime } from "@/hooks/useReadingtime";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
@@ -46,9 +48,9 @@ export const NewsCard = ({ news }) => {
               sx={{ color: "#1877F2" }}
               fontSize={{ xs: "12px", sm: "14px" }}
             >
-              {news?.categories[0]?.name}
+              {useDecodeHtml(news?.categories[0]?.name)}
             </Typography>
-            {" • 10 min read"}
+            {` • ${useReadingTime(news?.content)}`}
           </Typography>
           <Typography
             component={"a"}
@@ -69,7 +71,7 @@ export const NewsCard = ({ news }) => {
               },
             }}
           >
-            {news?.title}
+            {useDecodeHtml(news?.title)}
           </Typography>
           <Typography
             fontSize="14px"
@@ -82,7 +84,7 @@ export const NewsCard = ({ news }) => {
               my: 1,
             }}
           >
-            {news?.excerpt}
+            {useDecodeHtml(news?.excerpt)}
           </Typography>
         </CardContent>
       </Card>

@@ -2,6 +2,8 @@ import React from "react";
 
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import { useDecodeHtml } from "@/hooks/useDecodeHtml";
+import { useReadingTime } from "@/hooks/useReadingtime";
 
 export const TopContainer = ({ posts }) => {
   return (
@@ -90,7 +92,7 @@ export const TopContainer = ({ posts }) => {
                       },
                     }}
                   >
-                    {posts[0]?.title}
+                    {useDecodeHtml(posts[0]?.title)}
                   </Typography>
                   <Typography
                     fontSize="14px"
@@ -104,7 +106,7 @@ export const TopContainer = ({ posts }) => {
                       my: 1,
                     }}
                   >
-                    {posts[0]?.excerpt}
+                    {useDecodeHtml(posts[0]?.excerpt)}
                   </Typography>
                   <Typography
                     fontSize={{ xs: "11px", sm: "12px" }}
@@ -118,7 +120,7 @@ export const TopContainer = ({ posts }) => {
                     >
                       {posts[0]?.categories[0]?.name}
                     </Typography>
-                    {" • 10 min read"}
+                    {` • ${useReadingTime(posts[0]?.content)}`}
                   </Typography>
                 </Box>
               </Box>
@@ -187,7 +189,7 @@ export const TopContainer = ({ posts }) => {
                           },
                         }}
                       >
-                        {item?.title}
+                        {useDecodeHtml(item?.title)}
                       </Typography>
                       <Typography
                         fontSize={{ xs: "11px", sm: "12px" }}
@@ -199,9 +201,9 @@ export const TopContainer = ({ posts }) => {
                           sx={{ color: "#1877F2" }}
                           fontSize={{ xs: "11px", sm: "12px" }}
                         >
-                          {item?.categories[0]?.name}
+                          {useDecodeHtml(item?.categories[0]?.name)}
                         </Typography>
-                        {" • 10 min read"}
+                        {` • ${useReadingTime(item?.content)}`}
                       </Typography>
                     </Box>
                   </Box>

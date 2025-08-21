@@ -9,6 +9,7 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Modal,
 } from "@mui/material";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -21,12 +22,26 @@ import {
   KeyboardArrowDown,
   ExpandMore,
 } from "@mui/icons-material";
+import { Search } from "../Search/Search";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  borderRadius: "100px",
+  boxShadow: 24,
+};
 
 export const Header = () => {
   const router = useRouter();
   const [openDrawer, setOpenDrawer] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const openSectorsMenu = Boolean(anchorEl);
+
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleSectorsClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -35,14 +50,6 @@ export const Header = () => {
   const handleSectorsClose = () => {
     setAnchorEl(null);
   };
-
-  // Example sectors data - replace with your actual sectors
-  const sectorsData = [
-    { name: "Healthcare", link: "/sectors/healthcare" },
-    { name: "Education", link: "/sectors/education" },
-    { name: "Environment", link: "/sectors/environment" },
-    { name: "Technology", link: "/sectors/technology" },
-  ];
 
   return (
     <>
@@ -161,7 +168,7 @@ export const Header = () => {
                   )}
                 </Box>
               ))}
-              <IconButton>
+              <IconButton onClick={() => setModalOpen(true)}>
                 <SearchRounded />
               </IconButton>
             </Box>
@@ -169,6 +176,16 @@ export const Header = () => {
         </Container>
       </Box>
 
+      <Modal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Search modalOpen={modalOpen} setModalOpen={setModalOpen} />
+        </Box>
+      </Modal>
       {/* Sectors Dropdown Menu */}
       <Menu
         anchorEl={anchorEl}

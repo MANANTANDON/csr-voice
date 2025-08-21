@@ -2,9 +2,10 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import { MoreStories } from "./MoreStories";
+import { useDecodeHtml } from "@/hooks/useDecodeHtml";
+import { useReadingTime } from "@/hooks/useReadingtime";
 
 export const PostPage = ({ post }) => {
-  console.log(post, "POST. DATA");
   return (
     <>
       <Box sx={{ my: { xs: 2, md: 5 } }}>
@@ -26,7 +27,7 @@ export const PostPage = ({ post }) => {
                     fontSize={{ xs: "28px", md: "45px" }}
                     lineHeight={{ xs: "32px", md: "55px" }}
                   >
-                    {post?.title}
+                    {useDecodeHtml(post?.title)}
                   </Typography>
                 </Box>
 
@@ -35,7 +36,7 @@ export const PostPage = ({ post }) => {
                     className="font-500"
                     fontSize={{ xs: "16px", md: "18px" }}
                   >
-                    {post?.excerpt}
+                    {useDecodeHtml(post?.excerpt)}
                   </Typography>
                 </Box>
                 <Box sx={{ mb: 3 }}>
@@ -48,9 +49,9 @@ export const PostPage = ({ post }) => {
                       sx={{ color: "#1877F2" }}
                       fontSize={{ xs: "14px", sm: "16px" }}
                     >
-                      {post?.categories[0]?.name}
+                      {useDecodeHtml(post?.categories[0]?.name)}
                     </Typography>
-                    {" • 10 min read"}
+                    {` • ${useReadingTime(post?.content)}`}
                   </Typography>
                 </Box>
                 <Box
