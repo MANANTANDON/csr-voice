@@ -74,7 +74,23 @@ export const Header = () => {
                 />
               </a>
             </Box>
-            <Box sx={{ display: { md: "none" } }}>
+            <Box
+              sx={{
+                display: {
+                  xs: "flex",
+                  md: "none",
+                },
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 2,
+              }}
+            >
+              <IconButton
+                onClick={() => setModalOpen(true)}
+                sx={{ border: "1.5px solid #f8f8f8" }}
+              >
+                <SearchRounded />
+              </IconButton>
               <IconButton
                 onClick={() => setOpenDrawer(true)}
                 sx={{

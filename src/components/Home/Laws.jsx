@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import axios from "axios";
 import { NewsCard } from "../Cards/NewsCard";
+import { API_URL } from "@/constant";
 
 export const Laws = () => {
   const [posts, setPosts] = useState();
@@ -13,7 +14,7 @@ export const Laws = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://dev.csrvoice.com/wp-json/custom/v1/posts/category/laws?page=1&per_page=4`
+        `${API_URL}/wp-json/custom/v1/posts/category/laws?page=1&per_page=4`
       );
       setCategory(response?.data?.category);
       setPosts(response?.data?.data || []);
@@ -24,7 +25,9 @@ export const Laws = () => {
     }
   };
 
-  useEffect(() => fetchCategoryArticles(), []);
+  useEffect(() => {
+    fetchCategoryArticles();
+  }, []);
   return (
     <>
       {!loading && (

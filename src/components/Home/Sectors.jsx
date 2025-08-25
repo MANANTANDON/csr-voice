@@ -25,7 +25,9 @@ export const Sectors = () => {
     }
   };
 
-  useEffect(() => fetchCategoryArticles(), []);
+  useEffect(() => {
+    fetchCategoryArticles();
+  }, []);
   return (
     <>
       {!loading && (

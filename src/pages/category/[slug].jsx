@@ -13,7 +13,6 @@ const Category = ({ posts, rssItems }) => {
         <Box
           sx={{
             my: { xs: 2, md: 5 },
-            height: posts.data.length <= 4 && "100vh",
           }}
         >
           <Container maxWidth="xl">

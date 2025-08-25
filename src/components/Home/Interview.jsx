@@ -24,7 +24,9 @@ export const Interviews = () => {
     }
   };
 
-  useEffect(() => fetchCategoryArticles(), []);
+  useEffect(() => {
+    fetchCategoryArticles();
+  }, []);
   return (
     <>
       {!loading && (
