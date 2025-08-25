@@ -32,18 +32,26 @@ export const Footer = () => {
                   mb: { xs: 5, md: 0 },
                 }}
               >
-                <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
-                  <Facebook sx={{ color: "#1877F2" }} />
-                </IconButton>
-                <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
-                  <X sx={{ color: "#000000" }} />
-                </IconButton>
-                <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
-                  <YouTube sx={{ color: "#FF0000" }} />
-                </IconButton>
-                <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
-                  <LinkedIn sx={{ color: "#0A66C2" }} />
-                </IconButton>
+                <a href="https://ne-np.facebook.com/mycsrvoice">
+                  <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
+                    <Facebook sx={{ color: "#1877F2" }} />
+                  </IconButton>
+                </a>
+                <a href="https://twitter.com/CsrVoice">
+                  <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
+                    <X sx={{ color: "#000000" }} />
+                  </IconButton>
+                </a>
+                <a href="https://www.youtube.com/channel/UCAy0c5dC5yy-wcTxqgujMhA">
+                  <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
+                    <YouTube sx={{ color: "#FF0000" }} />
+                  </IconButton>
+                </a>
+                <a href="http://www.linkedin.com/in/csr-voice-049410232">
+                  <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
+                    <LinkedIn sx={{ color: "#0A66C2" }} />
+                  </IconButton>
+                </a>
               </Box>
             </Grid>
             <Grid
