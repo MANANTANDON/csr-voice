@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { SearchRounded } from "@mui/icons-material";
-import { Box, IconButton, InputBase, Typography } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  IconButton,
+  InputBase,
+  Typography,
+} from "@mui/material";
 import { useRouter } from "next/router";
 
-export const Search = ({ modalOpen, setModalOpen }) => {
+export const Search = ({ setModalOpen }) => {
   const [searchText, setSearchText] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   // Validation function
   const validateSearch = (text) => {
@@ -35,6 +42,8 @@ export const Search = ({ modalOpen, setModalOpen }) => {
   const handleSubmit = (e) => {
     e?.preventDefault();
 
+    setLoading(true);
+
     const validationError = validateSearch(searchText);
 
     if (validationError) {
@@ -47,7 +56,7 @@ export const Search = ({ modalOpen, setModalOpen }) => {
 
     // Navigate to search page with the search term
     router.push(`/search/${searchText}`);
-    setModalOpen(false);
+    router.route === "/search/[text]" && setModalOpen(false);
   };
 
   const handleInputChange = (e) => {
@@ -102,11 +111,15 @@ export const Search = ({ modalOpen, setModalOpen }) => {
             }}
             aria-label="search"
           >
-            <SearchRounded
-              sx={{
-                color: !searchText.trim() ? "lightGrey" : "primary.main",
-              }}
-            />
+            {loading ? (
+              <CircularProgress sx={{ color: "#1976d2" }} size={22} />
+            ) : (
+              <SearchRounded
+                sx={{
+                  color: !searchText.trim() ? "lightGrey" : "#1976d2",
+                }}
+              />
+            )}
           </IconButton>
         </Box>
 

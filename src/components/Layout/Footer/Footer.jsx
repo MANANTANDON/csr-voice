@@ -1,5 +1,6 @@
-import { CATMENU, MOREMENU } from "@/constant";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { CATMENU, MOREMENU, SOCIALS } from "@/constant";
+import { Facebook, LinkedIn, X, YouTube } from "@mui/icons-material";
+import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -23,6 +24,27 @@ export const Footer = () => {
                 height={120}
                 width={320}
               />
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 0.7,
+                  mb: { xs: 5, md: 0 },
+                }}
+              >
+                <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
+                  <Facebook sx={{ color: "#1877F2" }} />
+                </IconButton>
+                <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
+                  <X sx={{ color: "#000000" }} />
+                </IconButton>
+                <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
+                  <YouTube sx={{ color: "#FF0000" }} />
+                </IconButton>
+                <IconButton sx={{ border: "0.9px solid #e8e8e8" }}>
+                  <LinkedIn sx={{ color: "#0A66C2" }} />
+                </IconButton>
+              </Box>
             </Grid>
             <Grid
               item

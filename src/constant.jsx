@@ -1,5 +1,18 @@
 export const API_URL = "https://dev.csrvoice.com";
 
+export const SOCIALS = [
+  {
+    name: "Facebook",
+    link: "https://ne-np.facebook.com/mycsrvoice",
+  },
+  { name: "X", link: "https://twitter.com/CsrVoice" },
+  {
+    name: "YouTube",
+    link: "https://www.youtube.com/channel/UCAy0c5dC5yy-wcTxqgujMhA",
+  },
+  { name: "LinkedIn", link: "http://www.linkedin.com/in/csr-voice-049410232" },
+];
+
 export const CATMENU = [
   { name: "Home", link: "/" },
   { name: "News", link: "/category/news" },
