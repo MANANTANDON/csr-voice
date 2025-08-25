@@ -232,7 +232,8 @@ export const Header = () => {
         anchor="right"
         PaperProps={{
           sx: {
-            width: "100vw", // Full viewport width
+            width: "100%",
+            overflowX: "hidden",
           },
         }}
       >

@@ -4,6 +4,7 @@ import axios from "axios";
 import Image from "next/image";
 import { useDecodeHtml } from "@/hooks/useDecodeHtml";
 import { useReadingTime } from "@/hooks/useReadingtime";
+import { API_URL } from "@/constant";
 
 export const MoreStories = () => {
   const [data, setData] = useState();
@@ -11,7 +12,7 @@ export const MoreStories = () => {
   const getData = async () => {
     try {
       const postsResponse = await axios.get(
-        `https://dev.csrvoice.com/wp-json/custom/v1/posts?page=1&per_page=10`
+        `${API_URL}/wp-json/custom/v1/posts?page=1&per_page=10`
       );
       setData(postsResponse?.data?.data);
     } catch (err) {
@@ -52,7 +53,7 @@ export const MoreStories = () => {
               >
                 <Box sx={{ width: "150px" }}>
                   <a
-                    href={`/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
+                    href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
                   >
                     <Box
                       sx={{
@@ -75,7 +76,7 @@ export const MoreStories = () => {
                 <Box>
                   <Typography
                     component="a"
-                    href={`/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
+                    href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
                     sx={{
                       overflow: "hidden",
                       textOverflow: "ellipsis",
