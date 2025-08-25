@@ -1,3 +1,5 @@
+export const API_URL = "https://dev.csrvoice.com";
+
 export const CATMENU = [
   { name: "Home", link: "/" },
   { name: "News", link: "/category/news" },

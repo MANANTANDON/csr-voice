@@ -15,6 +15,7 @@ export const TopContainer = ({ posts }) => {
             p: 2,
             borderRadius: "7px",
             border: "1.5px solid #e8e8e8",
+            mx: { xs: -1, md: 0 },
           }}
         >
           <Typography
@@ -42,7 +43,7 @@ export const TopContainer = ({ posts }) => {
                 }}
               >
                 <a
-                  href={`/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
+                  href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
                 >
                   <Image
                     src={posts[0]?.featured_image}
@@ -74,9 +75,9 @@ export const TopContainer = ({ posts }) => {
                   </Typography>
                   <Typography
                     component="a"
-                    href={`/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
-                    fontSize="30px"
-                    lineHeight="35px"
+                    href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
+                    fontSize={{ xs: "25px", md: "30px" }}
+                    lineHeight={{ xs: "28px", md: "35px" }}
                     className="font-500"
                     sx={{
                       overflow: "hidden",
@@ -159,7 +160,7 @@ export const TopContainer = ({ posts }) => {
                       }}
                     >
                       <a
-                        href={`/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
+                        href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
                       >
                         <Image
                           src={item?.featured_image}
@@ -172,7 +173,7 @@ export const TopContainer = ({ posts }) => {
                     <Box sx={{ flex: 1, minWidth: 0 }}>
                       <Typography
                         component="a"
-                        href={`/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
+                        href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
                         fontSize={{ xs: "20px", sm: "20px" }}
                         lineHeight={{ xs: "24px", sm: "24px" }}
                         className="font-500"

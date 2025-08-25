@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import axios from "axios";
 import { NewsCard } from "../Cards/NewsCard";
+import { API_URL } from "@/constant";
 
 export const Sectors = () => {
   const [posts, setPosts] = useState();
@@ -13,7 +14,7 @@ export const Sectors = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://dev.csrvoice.com/wp-json/custom/v1/posts/category/sectors?page=1&per_page=4`
+        `${API_URL}/wp-json/custom/v1/posts/category/sectors?page=1&per_page=4`
       );
       setCategory(response?.data?.category);
       setPosts(response?.data?.data || []);
@@ -33,10 +34,11 @@ export const Sectors = () => {
             <Box
               sx={{
                 bgcolor: "#FFFFFF",
-                px: 2,
+                px: { xs: 1, md: 2 },
                 py: 1,
                 borderRadius: "7px",
                 border: "1.5px solid #e8e8e8",
+                mx: { xs: -1, md: 0 },
               }}
             >
               <Box

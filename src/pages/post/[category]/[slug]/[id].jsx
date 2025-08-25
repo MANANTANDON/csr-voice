@@ -1,6 +1,7 @@
 import { Layout } from "@/components/Layout/Layout";
 import { PostPage } from "@/components/Post/PostPage";
 import { RelatedNews } from "@/components/Post/RelatedNews";
+import { API_URL } from "@/constant";
 import axios from "axios";
 import React from "react";
 import { parseStringPromise } from "xml2js";
@@ -20,7 +21,7 @@ export async function getServerSideProps({ query }) {
   try {
     // Fetch custom posts from your CMS
     const postsResponse = await axios.get(
-      `https://dev.csrvoice.com/wp-json/custom/v1/posts/${query?.slug}`
+      `${API_URL}/wp-json/custom/v1/posts/${query?.slug}`
     );
 
     // Fetch RSS feed from TOI

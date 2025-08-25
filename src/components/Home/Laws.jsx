@@ -33,10 +33,11 @@ export const Laws = () => {
             <Box
               sx={{
                 bgcolor: "#FFFFFF",
-                px: 2,
+                px: { xs: 1, md: 2 },
                 py: 1,
                 borderRadius: "7px",
                 border: "1.5px solid #e8e8e8",
+                mx: { xs: -1, md: 0 },
               }}
             >
               <Box

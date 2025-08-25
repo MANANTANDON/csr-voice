@@ -4,6 +4,7 @@ import { Sectors } from "@/components/Home/Sectors";
 import { ThirdContainer } from "@/components/Home/ThirdContainer";
 import { TopContainer } from "@/components/Home/TopContainer";
 import { Layout } from "@/components/Layout/Layout";
+import { API_URL } from "@/constant";
 import axios from "axios";
 import Head from "next/head";
 import { parseStringPromise } from "xml2js";
@@ -149,7 +150,7 @@ export async function getServerSideProps() {
 
     // Fetch custom posts from your CMS
     const postsResponse = await axios.get(
-      `https://dev.csrvoice.com/wp-json/custom/v1/posts?page=${page}&per_page=10`
+      `${API_URL}/wp-json/custom/v1/posts?page=${page}&per_page=10`
     );
 
     // Fetch RSS feed from TOI

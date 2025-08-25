@@ -17,7 +17,9 @@ export const NewsCard = ({ news }) => {
             },
           }}
         >
-          <a href={`/${news?.categories[0]?.slug}/${news?.slug}/${news?.id}`}>
+          <a
+            href={`/post/${news?.categories[0]?.slug}/${news?.slug}/${news?.id}`}
+          >
             <Box
               sx={{
                 position: "relative",
@@ -54,7 +56,7 @@ export const NewsCard = ({ news }) => {
           </Typography>
           <Typography
             component={"a"}
-            href={`/${news?.categories[0]?.slug}/${news?.slug}/${news?.id}`}
+            href={`/post/${news?.categories[0]?.slug}/${news?.slug}/${news?.id}`}
             fontSize={{ xs: "20px", sm: "22px" }}
             lineHeight={{ xs: "24px", sm: "28px" }}
             className="font-500"

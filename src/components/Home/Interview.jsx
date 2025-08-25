@@ -3,6 +3,8 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
 import { useDecodeHtml } from "@/hooks/useDecodeHtml";
+import { API_URL } from "@/constant";
+import { useReadingTime } from "@/hooks/useReadingtime";
 
 export const Interviews = () => {
   const [posts, setPosts] = useState();
@@ -12,7 +14,7 @@ export const Interviews = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://dev.csrvoice.com/wp-json/custom/v1/posts/category/interview?page=1&per_page=4`
+        `${API_URL}/wp-json/custom/v1/posts/category/interview?page=1&per_page=4`
       );
       setPosts(response?.data?.data || []);
     } catch (error) {
@@ -34,7 +36,8 @@ export const Interviews = () => {
                 alignItems: "center",
                 justifyContent: "space-between",
                 my: 1,
-                px: 1.5,
+                px: { xs: 1, md: 1.5 },
+                mx: { xs: -1, md: 0 },
               }}
             >
               <Typography
@@ -48,7 +51,7 @@ export const Interviews = () => {
             <Grid container>
               <Grid item size={{ xs: 12 }}>
                 <a
-                  href={`/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
+                  href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
                 >
                   <Box
                     sx={{
@@ -91,7 +94,7 @@ export const Interviews = () => {
                         lineHeight="35px"
                         className="font-500"
                         component={"a"}
-                        href={`/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
+                        href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
                         sx={{
                           overflow: "hidden",
                           textOverflow: "ellipsis",
@@ -132,9 +135,9 @@ export const Interviews = () => {
                           sx={{ color: "#1877F2" }}
                           fontSize={{ xs: "11px", sm: "12px" }}
                         >
-                          {posts[0]?.categories[0]?.name}
+                          {useDecodeHtml(posts[0]?.categories[0]?.name)}
                         </Typography>
-                        {" • 10 min read"}
+                        {` • ${useReadingTime(posts[0]?.content)}`}
                       </Typography>
                     </Box>
                   </Box>
