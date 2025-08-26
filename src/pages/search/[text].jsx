@@ -32,7 +32,6 @@ const Search = ({ posts, rssItems, searchtext }) => {
       const response = await axios.get(
         `${API_URL}/wp-json/custom/v1/search?keyword=${searchtext}&page=1&per_page=${size}`
       );
-      console.log(response?.data?.data);
       setPaginatesPosts(response?.data?.data);
       if (!response?.data?.pagination?.has_next) {
         setHasMore(false);

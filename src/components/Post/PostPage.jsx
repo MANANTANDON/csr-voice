@@ -100,6 +100,7 @@ export const PostPage = ({ post }) => {
                     flexDirection: "column",
                     borderTop: "1.5px solid #e8e8e8",
                     pt: 2,
+                    pb: { xs: 2, md: 0 },
                   }}
                 >
                   <Typography>Share this Post</Typography>

@@ -9,7 +9,6 @@ import React from "react";
 import { parseStringPromise } from "xml2js";
 
 const Index = ({ post, rssItems, categroy }) => {
-  console.log(post);
   const title = useDecodeHtml(post?.data?.title);
   const excerpt = useDecodeHtml(post?.data?.excerpt);
   return (
