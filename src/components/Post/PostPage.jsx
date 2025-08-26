@@ -8,7 +8,6 @@ import { Sharing } from "../Sharing/Sharing";
 import { INIT_URI } from "@/constant";
 
 export const PostPage = ({ post }) => {
-  console.log(post, "PSOT DATATATA");
   const slug = `${INIT_URI}/post/${post?.categories[0]?.slug}/${post?.slug}/${post?.id}`;
   return (
     <>
