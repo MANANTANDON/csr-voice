@@ -6,12 +6,12 @@ import axios from "axios";
 import React from "react";
 import { parseStringPromise } from "xml2js";
 
-const Index = ({ post, rssItems }) => {
+const Index = ({ post, rssItems, categroy }) => {
   return (
     <>
       <Layout marqueeData={rssItems}>
         <PostPage post={post?.data} />
-        <RelatedNews category={post} />
+        <RelatedNews catName={categroy} />
       </Layout>
     </>
   );
@@ -40,6 +40,7 @@ export async function getServerSideProps({ query }) {
         post: postsResponse.data,
         rssItems,
         error: null,
+        categroy: query?.category,
       },
     };
   } catch (error) {
@@ -50,6 +51,7 @@ export async function getServerSideProps({ query }) {
         posts: [],
         rssItems: [],
         error: "Failed to fetch data",
+        categroy: "",
       },
     };
   }

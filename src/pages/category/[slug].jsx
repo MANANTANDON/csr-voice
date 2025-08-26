@@ -27,7 +27,6 @@ const Category = ({ posts, rssItems, category }) => {
       const response = await axios.get(
         `${API_URL}/wp-json/custom/v1/posts/category/${category}?page=1&per_page=${size}`
       );
-      console.log(response?.data, "PAGINATED DATA LOGIC");
       setPaginatesPosts(response?.data?.data);
       if (!response?.data?.pagination?.has_next) {
         setHasMore(false);
