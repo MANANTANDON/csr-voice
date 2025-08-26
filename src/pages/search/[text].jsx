@@ -1,11 +1,78 @@
+import React, { useCallback, useEffect, useState } from "react";
 import { NewsCard } from "@/components/Cards/NewsCard";
 import { Layout } from "@/components/Layout/Layout";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Container,
+  Grid,
+  Typography,
+} from "@mui/material";
 import axios from "axios";
-import React from "react";
 import { parseStringPromise } from "xml2js";
+import { API_URL } from "@/constant";
 
 const Search = ({ posts, rssItems, searchtext }) => {
+  const [paginatedPosts, setPaginatesPosts] = useState();
+  const [size, setSize] = useState(16);
+  const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+
+  // Reset state when category changes
+  useEffect(() => {
+    setPaginatesPosts(undefined);
+    setSize(16);
+    setHasMore(true);
+  }, [searchtext]);
+
+  const getPaginatedPosts = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        `${API_URL}/wp-json/custom/v1/search?keyword=${searchtext}&page=1&per_page=${size}`
+      );
+      console.log(response?.data?.data);
+      setPaginatesPosts(response?.data?.data);
+      if (!response?.data?.pagination?.has_next) {
+        setHasMore(false);
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleScroll = () => {
+    // Checks if the user has scrolled to the bottom of the page
+    if (
+      window.innerHeight + document.documentElement.scrollTop >
+        document.documentElement.offsetHeight - 1200 &&
+      !loading &&
+      hasMore
+    ) {
+      setSize((prevSize) => prevSize + 8);
+    }
+  };
+
+  // Trigger getPaginatedPosts when size changes (for pagination)
+  useEffect(() => {
+    if (size > 16) {
+      // Only call when size increases beyond initial value
+      getPaginatedPosts();
+    }
+  }, [size]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [loading, hasMore]);
+
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <>
       <Layout marqueeData={rssItems}>
@@ -42,7 +109,55 @@ const Search = ({ posts, rssItems, searchtext }) => {
                     <NewsCard news={item} />
                   </Grid>
                 ))}
+                {paginatedPosts?.slice(8)?.map((item, key) => (
+                  <Grid item size={{ xs: 12, md: 3 }} key={key}>
+                    <NewsCard news={item} />
+                  </Grid>
+                ))}
               </Grid>
+              {!hasMore ? (
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "10vh",
+                  }}
+                >
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      color: "white",
+                      bgcolor: "#1877f2",
+                      border: "0.5px solid #1877f2",
+                      textTransform: "none",
+                      borderRadius: "100px",
+                      px: 5,
+                      "&:hover": {
+                        bgcolor: "white",
+                        color: "#1877f2",
+                        border: "0.5px solid #1877f2",
+                      },
+                    }}
+                    onClick={scrollToTop}
+                  >
+                    Back to top
+                  </Button>
+                </Box>
+              ) : (
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    height: "60vh",
+                  }}
+                >
+                  <CircularProgress sx={{ color: "#1877f2" }} />
+                </Box>
+              )}
             </Box>
           </Container>
         </Box>
@@ -56,7 +171,7 @@ export async function getServerSideProps({ query }) {
   try {
     // ✅ WP Native Search API
     const postsResponse = await axios.get(
-      `https://dev.csrvoice.com/wp-json/custom/v1/search?keyword=${searchText}&page=1&per_page=4`
+      `${API_URL}/wp-json/custom/v1/search?keyword=${searchText}&page=1&per_page=8`
     );
     // ✅ RSS API
     const rssResponse = await axios.get(
