@@ -4,8 +4,12 @@ import React from "react";
 import { MoreStories } from "./MoreStories";
 import { useDecodeHtml } from "@/hooks/useDecodeHtml";
 import { useReadingTime } from "@/hooks/useReadingtime";
+import { Sharing } from "../Sharing/Sharing";
+import { INIT_URI } from "@/constant";
 
 export const PostPage = ({ post }) => {
+  console.log(post, "PSOT DATATATA");
+  const slug = `${INIT_URI}/post/${post?.categories[0]?.slug}/${post?.slug}/${post?.id}`;
   return (
     <>
       <Box sx={{ my: { xs: 2, md: 5 } }}>
@@ -39,7 +43,14 @@ export const PostPage = ({ post }) => {
                     {useDecodeHtml(post?.excerpt)}
                   </Typography>
                 </Box>
-                <Box sx={{ mb: 3 }}>
+                <Box
+                  sx={{
+                    mb: 3,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
                   <Typography
                     fontSize={{ xs: "14px", sm: "16px" }}
                     sx={{ color: "#000000", my: 1 }}
@@ -53,6 +64,7 @@ export const PostPage = ({ post }) => {
                     </Typography>
                     {` • ${useReadingTime(post?.content)}`}
                   </Typography>
+                  <Sharing text={post?.title} slug={slug} />
                 </Box>
                 <Box
                   sx={{
@@ -80,6 +92,19 @@ export const PostPage = ({ post }) => {
                     dangerouslySetInnerHTML={{ __html: post?.content }}
                     className="font-500 post-cont"
                   />
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    borderTop: "1.5px solid #e8e8e8",
+                    pt: 2,
+                  }}
+                >
+                  <Typography>Share this Post</Typography>
+                  <Sharing text={post?.title} slug={slug} />
                 </Box>
               </Grid>
               {/* Right Container */}

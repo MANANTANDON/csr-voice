@@ -1,3 +1,4 @@
+export const INIT_URI = "https://csr-voice.vercel.app";
 export const API_URL = "https://dev.csrvoice.com";
 
 export const CATMENU = [
