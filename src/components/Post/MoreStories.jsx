@@ -46,7 +46,6 @@ export const MoreStories = () => {
                 sx={{
                   display: "flex",
                   alignItems: "normal",
-                  justifyContent: "space-between",
                   gap: 2,
                 }}
                 key={key}
@@ -73,7 +72,7 @@ export const MoreStories = () => {
                     </Box>
                   </a>
                 </Box>
-                <Box>
+                <Box sx={{ width: "100%" }}>
                   <Typography
                     component="a"
                     href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}

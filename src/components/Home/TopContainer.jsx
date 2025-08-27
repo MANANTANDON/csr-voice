@@ -56,6 +56,8 @@ export const TopContainer = ({ posts }) => {
                   sx={{
                     position: "absolute",
                     bottom: 0,
+                    right: 0,
+                    left: 0,
                     px: { xs: 2, md: 4 },
                     background:
                       "linear-gradient(to top, #000000 30%, transparent)",

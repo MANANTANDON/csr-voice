@@ -44,6 +44,7 @@ export const PostPage = ({ post }) => {
                 </Box>
                 <Box
                   sx={{
+                    mt: 2,
                     mb: 3,
                     display: "flex",
                     alignItems: "center",
@@ -63,7 +64,7 @@ export const PostPage = ({ post }) => {
                     </Typography>
                     {` • ${useReadingTime(post?.content)}`}
                   </Typography>
-                  <Sharing text={post?.title} slug={slug} />
+                  <Sharing text={useDecodeHtml(post?.title)} slug={slug} />
                 </Box>
                 <Box
                   sx={{
@@ -99,12 +100,11 @@ export const PostPage = ({ post }) => {
                     justifyContent: "center",
                     flexDirection: "column",
                     borderTop: "1.5px solid #e8e8e8",
-                    pt: 2,
-                    pb: { xs: 2, md: 0 },
+                    p: 2,
                   }}
                 >
-                  <Typography>Share this Post</Typography>
-                  <Sharing text={post?.title} slug={slug} />
+                  <Typography sx={{ mb: 2 }}>Share this Post on</Typography>
+                  <Sharing text={useDecodeHtml(post?.title)} slug={slug} />
                 </Box>
               </Grid>
               {/* Right Container */}

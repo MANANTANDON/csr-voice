@@ -1,7 +1,7 @@
 "use client";
 
 import { Facebook, LinkedIn, WhatsApp, X } from "@mui/icons-material";
-import { Box } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import React from "react";
 
 export const Sharing = ({ slug, text }) => {
@@ -12,60 +12,72 @@ export const Sharing = ({ slug, text }) => {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          gap: 0.5,
+          gap: 1,
         }}
       >
         <a
           href={`https://api.whatsapp.com/send?text=${text} ${slug}`}
-          style={{
-            padding: "10px",
-            borderRadius: "4px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
           target="_blank"
         >
-          <WhatsApp sx={{ color: "#25D366" }} />
+          <IconButton
+            sx={{
+              bgcolor: "#25D366",
+              borderRadius: "5px",
+              "&:hover": {
+                bgcolor: "#25D366",
+              },
+            }}
+          >
+            <WhatsApp sx={{ color: "#FFFFFF" }} />
+          </IconButton>
         </a>
         <a
           href={`https://www.linkedin.com/shareArticle?url=${slug}&title=${text}`}
-          style={{
-            padding: "10px",
-            borderRadius: "4px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
           target="_blank"
         >
-          <LinkedIn sx={{ color: "#0A66C2" }} />
+          <IconButton
+            sx={{
+              bgcolor: "#0A66C2",
+              borderRadius: "5px",
+              "&:hover": {
+                bgcolor: "#0A66C2",
+              },
+            }}
+          >
+            <LinkedIn sx={{ color: "#FFFFFF" }} />
+          </IconButton>
         </a>
         <a
           href={`https://www.facebook.com/sharer.php?u=${slug}`}
-          style={{
-            padding: "10px",
-            borderRadius: "4px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
           target="_blank"
         >
-          <Facebook fontSize="small" sx={{ color: "#1877F2" }} />
+          <IconButton
+            sx={{
+              bgcolor: "#1877F2",
+              borderRadius: "5px",
+              "&:hover": {
+                bgcolor: "#1877F2",
+              },
+            }}
+          >
+            <Facebook sx={{ color: "#FFFFFF" }} />
+          </IconButton>
         </a>
         <a
           href={`https://twitter.com/share?url=${slug}&text=${text}`}
-          style={{
-            padding: "10px",
-            borderRadius: "4px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
           target="_blank"
         >
-          <X sx={{ color: "#000000" }} />
+          <IconButton
+            sx={{
+              bgcolor: "#000000",
+              borderRadius: "5px",
+              "&:hover": {
+                bgcolor: "#000000",
+              },
+            }}
+          >
+            <X sx={{ color: "#FFFFFF" }} />
+          </IconButton>
         </a>
       </Box>
     </>
