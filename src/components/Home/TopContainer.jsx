@@ -6,7 +6,6 @@ import { useDecodeHtml } from "@/hooks/useDecodeHtml";
 import { useReadingTime } from "@/hooks/useReadingtime";
 
 export const TopContainer = ({ posts }) => {
-  console.log(posts, "INITAL POST...");
   return (
     <Box sx={{ my: { xs: 2, md: 5 } }}>
       <Container maxWidth="xl">

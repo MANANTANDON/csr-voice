@@ -150,7 +150,7 @@ export async function getServerSideProps() {
 
     // Fetch custom posts from your CMS
     const postsResponse = await axios.get(
-      `${API_URL}//wp-json/custom/v1/posts/summary?page=${page}&per_page=10`
+      `${API_URL}/wp-json/custom/v1/posts?page=${page}&per_page=10`
     );
 
     // Fetch RSS feed from TOI
