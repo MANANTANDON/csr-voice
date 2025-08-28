@@ -12,7 +12,7 @@ export const MoreStories = () => {
   const getData = async () => {
     try {
       const postsResponse = await axios.get(
-        `${API_URL}/wp-json/custom/v1/posts?page=1&per_page=10`
+        `${API_URL}/wp-json/custom/v1/posts/format/standard?page=1&per_page=10`
       );
       setData(postsResponse?.data?.data);
     } catch (err) {

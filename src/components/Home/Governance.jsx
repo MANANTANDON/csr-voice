@@ -14,7 +14,7 @@ export const Governance = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${API_URL}/wp-json/custom/v1/posts/category/governance?page=1&per_page=2`
+        `${API_URL}/wp-json/custom/v1/posts/category/governance/format/standard?page=1&per_page=2`
       );
       setCategory(response?.data?.category);
       setPosts(response?.data?.data || []);

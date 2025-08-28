@@ -14,7 +14,7 @@ export const Laws = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${API_URL}/wp-json/custom/v1/posts/category/laws?page=1&per_page=4`
+        `${API_URL}/wp-json/custom/v1/posts/category/laws/format/standard?page=1&per_page=4`
       );
       setCategory(response?.data?.category);
       setPosts(response?.data?.data || []);

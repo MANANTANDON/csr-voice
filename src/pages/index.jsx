@@ -147,10 +147,11 @@ export default function Home({ posts, rssItems }) {
 export async function getServerSideProps() {
   try {
     const page = 1;
+    const format = "standard";
 
     // Fetch custom posts from your CMS
     const postsResponse = await axios.get(
-      `${API_URL}/wp-json/custom/v1/posts?page=${page}&per_page=10`
+      `${API_URL}/wp-json/custom/v1/posts/format/${format}?page=${page}&per_page=10`
     );
 
     // Fetch RSS feed from TOI

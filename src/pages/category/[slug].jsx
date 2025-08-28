@@ -25,7 +25,7 @@ const Category = ({ posts, rssItems, category }) => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${API_URL}/wp-json/custom/v1/posts/category/${category}?page=1&per_page=${size}`
+        `${API_URL}/wp-json/custom/v1/posts/category/${category}/format/standard?page=1&per_page=${size}`
       );
       setPaginatesPosts(response?.data?.data);
       if (!response?.data?.pagination?.has_next) {
@@ -164,7 +164,7 @@ export default Category;
 export async function getServerSideProps({ query }) {
   try {
     const response = await axios.get(
-      `${API_URL}/wp-json/custom/v1/posts/category/${query?.slug}?page=1&per_page=8`
+      `${API_URL}/wp-json/custom/v1/posts/category/${query?.slug}/format/standard?page=1&per_page=8`
     );
 
     const rssResponse = await axios.get(
