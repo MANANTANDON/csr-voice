@@ -40,6 +40,14 @@ export const TopContainer = ({ posts }) => {
                   height: { xs: "400px", md: "600px" },
                   width: "100%",
                   borderRadius: "10px",
+                  transition: "transform 0.4s ease, box-shadow 0.4s ease",
+                  // "&:hover": {
+                  //   transform: "translateY(-8px)",
+                  //   boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+                  // },
+                  "&:hover img": {
+                    transform: "scale(1.08)",
+                  },
                 }}
               >
                 <a
@@ -50,6 +58,10 @@ export const TopContainer = ({ posts }) => {
                     layout="fill"
                     objectFit="cover"
                     objectPosition="center"
+                    style={{
+                      transition:
+                        "transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                    }}
                   />
                 </a>
                 <Box
@@ -159,6 +171,10 @@ export const TopContainer = ({ posts }) => {
                         maxWidth: "150px",
                         borderRadius: "5px",
                         flexShrink: 0,
+                        transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                        "&:hover img": {
+                          transform: "scale(1.1)",
+                        },
                       }}
                     >
                       <a
@@ -169,6 +185,10 @@ export const TopContainer = ({ posts }) => {
                           layout="fill"
                           objectFit="cover"
                           objectPosition="center"
+                          style={{
+                            transition:
+                              "transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                          }}
                         />
                       </a>
                     </Box>

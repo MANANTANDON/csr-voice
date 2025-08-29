@@ -31,7 +31,7 @@ export const MOBILECAT = [
 
 export const MOREMENU = [
   { name: "About Us", link: "/aboutus" },
-  { name: "Contact", link: "/contact" },
+  { name: "Contact", link: "/contact-us" },
   { name: "Advertise", link: "/advertise" },
   { name: "Terms & Conditions", link: "/tnc" },
 ];

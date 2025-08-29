@@ -28,6 +28,13 @@ export const NewsCard = ({ news }) => {
                 width: "100%",
                 borderRadius: "10px",
                 border: "1.5px solid #eeeeee",
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                "& img": {
+                  transition: "transform 0.3s ease",
+                },
+                "&:hover img": {
+                  transform: "scale(1.1)",
+                },
               }}
             >
               <Image
