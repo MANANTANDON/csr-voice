@@ -18,12 +18,14 @@ export const Footer = () => {
         <Container maxWidth="xl" sx={{ pt: 5 }}>
           <Grid container sx={{ borderBottom: "1.5px solid #e8e8e8", pb: 3 }}>
             <Grid item size={{ xs: 12, md: 6 }}>
-              <Image
-                src={"/images/csr.png"}
-                layout="intrinsic"
-                height={120}
-                width={320}
-              />
+              <a href="/">
+                <Image
+                  src={"/images/csr.png"}
+                  layout="intrinsic"
+                  height={120}
+                  width={220}
+                />
+              </a>
               <Box
                 sx={{
                   display: "flex",

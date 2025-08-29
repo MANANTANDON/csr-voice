@@ -19,7 +19,7 @@ export const TopContainer = ({ posts }) => {
           }}
         >
           <Typography
-            fontSize={{ xs: "32px", md: "52px" }}
+            fontSize={{ xs: "32px", md: "42px" }}
             className="font-700"
             sx={{
               color: "#080808",

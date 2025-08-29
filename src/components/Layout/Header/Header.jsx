@@ -69,8 +69,8 @@ export const Header = () => {
                 <Image
                   src={"/images/csr.png"}
                   layout="intrinsic"
-                  height={48}
-                  width={132}
+                  height={68}
+                  width={180}
                 />
               </a>
             </Box>

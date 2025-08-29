@@ -102,59 +102,79 @@ const Search = ({ posts, rssItems, searchtext }) => {
                 Showing results for :{" "}
                 <span style={{ color: "#1877F2" }}>{searchtext}</span>
               </Typography>
-              <Grid container rowGap={{ xs: 1, md: 5 }}>
-                {posts?.data?.map((item, key) => (
-                  <Grid item size={{ xs: 12, md: 3 }} key={key}>
-                    <NewsCard news={item} />
-                  </Grid>
-                ))}
-                {paginatedPosts?.slice(8)?.map((item, key) => (
-                  <Grid item size={{ xs: 12, md: 3 }} key={key}>
-                    <NewsCard news={item} />
-                  </Grid>
-                ))}
-              </Grid>
-              {!hasMore ? (
+              {posts?.data?.length === 0 ? (
                 <Box
                   sx={{
+                    height: { xs: "20vh", md: "40vh" },
                     display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
                     alignItems: "center",
-                    height: "10vh",
+                    justifyContent: "center",
                   }}
                 >
-                  <Button
-                    variant="outlined"
-                    sx={{
-                      color: "white",
-                      bgcolor: "#1877f2",
-                      border: "0.5px solid #1877f2",
-                      textTransform: "none",
-                      borderRadius: "100px",
-                      px: 5,
-                      "&:hover": {
-                        bgcolor: "white",
-                        color: "#1877f2",
-                        border: "0.5px solid #1877f2",
-                      },
-                    }}
-                    onClick={scrollToTop}
+                  <Typography
+                    sx={{ fontSize: { xs: "20px", md: "22px" } }}
+                    className="font-700"
                   >
-                    Back to top
-                  </Button>
+                    No Result Found!
+                  </Typography>
                 </Box>
               ) : (
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "60vh",
-                  }}
-                >
-                  <CircularProgress sx={{ color: "#1877f2" }} />
+                <Box>
+                  <Grid container rowGap={{ xs: 1, md: 5 }}>
+                    {posts?.data?.map((item, key) => (
+                      <Grid item size={{ xs: 12, md: 3 }} key={key}>
+                        <NewsCard news={item} />
+                      </Grid>
+                    ))}
+                    {paginatedPosts?.slice(8)?.map((item, key) => (
+                      <Grid item size={{ xs: 12, md: 3 }} key={key}>
+                        <NewsCard news={item} />
+                      </Grid>
+                    ))}
+                  </Grid>
+                  {!hasMore ? (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "10vh",
+                      }}
+                    >
+                      <Button
+                        variant="outlined"
+                        sx={{
+                          color: "white",
+                          bgcolor: "#1877f2",
+                          border: "0.5px solid #1877f2",
+                          textTransform: "none",
+                          borderRadius: "100px",
+                          px: 5,
+                          "&:hover": {
+                            bgcolor: "white",
+                            color: "#1877f2",
+                            border: "0.5px solid #1877f2",
+                          },
+                        }}
+                        onClick={scrollToTop}
+                      >
+                        Back to top
+                      </Button>
+                    </Box>
+                  ) : (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "60vh",
+                      }}
+                    >
+                      <CircularProgress sx={{ color: "#1877f2" }} />
+                    </Box>
+                  )}
                 </Box>
               )}
             </Box>
