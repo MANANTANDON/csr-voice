@@ -1,3 +1,4 @@
+import { AdvertRect } from "@/components/Advertisements/AdvertRect";
 import { Interviews } from "@/components/Home/Interview";
 import { Laws } from "@/components/Home/Laws";
 import { Sectors } from "@/components/Home/Sectors";
@@ -135,10 +136,15 @@ export default function Home({ posts, rssItems }) {
       </Head>
       <Layout marqueeData={rssItems}>
         <TopContainer posts={posts?.data} />
+        <AdvertRect />
         <Sectors />
+        <AdvertRect />
         <ThirdContainer />
+        <AdvertRect />
         <Interviews />
+        <AdvertRect />
         <Laws />
+        <AdvertRect />
       </Layout>
     </>
   );

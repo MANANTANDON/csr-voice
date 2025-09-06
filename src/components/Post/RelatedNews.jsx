@@ -79,6 +79,7 @@ export const RelatedNews = ({ catName }) => {
               p: 2,
               borderRadius: "7px",
               border: "1.5px solid #e8e8e8",
+              mx: { xs: -1, md: 0 },
             }}
           >
             <Typography

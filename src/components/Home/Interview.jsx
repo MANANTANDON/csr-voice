@@ -92,8 +92,8 @@ export const Interviews = () => {
                         4d616e616e
                       </Typography>
                       <Typography
-                        fontSize="30px"
-                        lineHeight="35px"
+                        fontSize={{ xs: "24px", md: "30px" }}
+                        lineHeight={{ xs: "28px", md: "35px" }}
                         className="font-500"
                         component={"a"}
                         href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}

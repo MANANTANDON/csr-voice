@@ -6,6 +6,7 @@ import { useDecodeHtml } from "@/hooks/useDecodeHtml";
 import { useReadingTime } from "@/hooks/useReadingtime";
 import { Sharing } from "../Sharing/Sharing";
 import { INIT_URI } from "@/constant";
+import { AdvertSquare } from "../Advertisements/AdvertSquare";
 
 export const PostPage = ({ post }) => {
   const slug = `${INIT_URI}/post/${post?.categories[0]?.slug}/${post?.slug}/${post?.id}`;
@@ -118,6 +119,7 @@ export const PostPage = ({ post }) => {
                 }}
               >
                 <MoreStories />
+                <AdvertSquare />
               </Grid>
             </Grid>
           </Box>
