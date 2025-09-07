@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 
 export const AdvertSquare = () => {
@@ -14,8 +15,8 @@ export const AdvertSquare = () => {
       >
         <Box
           sx={{
-            height: { xs: "250px", md: "300px" },
-            width: { xs: "250px", md: "300px" },
+            height: "fit-content",
+            width: { xs: "320px", md: "300px" },
             bgcolor: "#e8e8e8",
             borderRadius: "7px",
           }}
@@ -26,6 +27,14 @@ export const AdvertSquare = () => {
           >
             Advertisement
           </Typography>
+          <a href="https://snowchildstudio.com/">
+            <Image
+              src={"/images/ads/adone.png"}
+              height={230}
+              width={320}
+              layout="intrinsic"
+            />
+          </a>
         </Box>
       </Box>
     </>

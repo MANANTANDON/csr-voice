@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 
 export const AdvertRect = () => {
@@ -14,8 +15,6 @@ export const AdvertRect = () => {
       >
         <Box
           sx={{
-            height: "100px",
-            width: { xs: "100%", md: "900px" },
             bgcolor: "#e8e8e8",
             borderRadius: "7px",
           }}
@@ -26,6 +25,14 @@ export const AdvertRect = () => {
           >
             Advertisement
           </Typography>
+          <a href="https://shop.snowchildstudio.com/">
+            <Image
+              src={"/images/ads/adTwo.png"}
+              height={100}
+              width={900}
+              layout="intrinsic"
+            />
+          </a>
         </Box>
       </Box>
     </>
