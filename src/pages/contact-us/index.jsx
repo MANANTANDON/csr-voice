@@ -11,6 +11,7 @@ import {
   Typography,
   FormHelperText,
   Divider,
+  CircularProgress,
 } from "@mui/material";
 import React, { useState } from "react";
 
@@ -25,6 +26,8 @@ const Contactus = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   // Regex patterns
   const nameRegex = /^[A-Za-z\s]+$/;
@@ -132,8 +135,9 @@ const Contactus = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitMessage("");
 
     // Validate all fields
     const newErrors = {};
@@ -148,9 +152,52 @@ const Contactus = () => {
 
     // If no errors, submit the form
     if (Object.keys(newErrors).length === 0) {
-      console.log("Form submitted:", formData);
-      // Add your form submission logic here
-      alert("Form submitted successfully!");
+      setIsSubmitting(true);
+
+      try {
+        const response = await fetch("/api/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            company: formData.company,
+            designation: formData.designation,
+            contactNo: formData.contactNo,
+            email: formData.email,
+            remarks: formData.remarks,
+          }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          setSubmitMessage(
+            "Thank you! Your message has been sent successfully. We'll contact you soon."
+          );
+          // Reset form
+          setFormData({
+            name: "",
+            company: "",
+            designation: "",
+            contactNo: "",
+            email: "",
+            remarks: "",
+          });
+        } else {
+          setSubmitMessage(
+            "Sorry, there was an error sending your message. Please try again or contact us directly at hello@csrvoice.com"
+          );
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setSubmitMessage(
+          "Sorry, there was an error sending your message. Please try again or contact us directly at hello@csrvoice.com"
+        );
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -213,6 +260,34 @@ const Contactus = () => {
                     variant="outlined"
                   >
                     <CardContent>
+                      {submitMessage && (
+                        <Box
+                          sx={{
+                            mb: 3,
+                            p: 2,
+                            borderRadius: 1,
+                            bgcolor:
+                              submitMessage.includes("error") ||
+                              submitMessage.includes("Sorry")
+                                ? "#ffebee"
+                                : "#e8f5e8",
+                            color:
+                              submitMessage.includes("error") ||
+                              submitMessage.includes("Sorry")
+                                ? "#c62828"
+                                : "#2e7d32",
+                            border: `1px solid ${
+                              submitMessage.includes("error") ||
+                              submitMessage.includes("Sorry")
+                                ? "#ef5350"
+                                : "#4caf50"
+                            }`,
+                          }}
+                        >
+                          <Typography>{submitMessage}</Typography>
+                        </Box>
+                      )}
+
                       <form onSubmit={handleSubmit}>
                         <Grid container spacing={2}>
                           <Grid item size={{ xs: 12, md: 6 }}>
@@ -221,6 +296,7 @@ const Contactus = () => {
                               name="name"
                               value={formData.name}
                               onChange={handleInputChange}
+                              disabled={isSubmitting}
                               sx={{
                                 border: `1px solid ${
                                   errors.name ? "#f44336" : "#e8e8e8"
@@ -244,6 +320,7 @@ const Contactus = () => {
                               name="company"
                               value={formData.company}
                               onChange={handleInputChange}
+                              disabled={isSubmitting}
                               sx={{
                                 border: `1px solid ${
                                   errors.company ? "#f44336" : "#e8e8e8"
@@ -267,6 +344,7 @@ const Contactus = () => {
                               name="designation"
                               value={formData.designation}
                               onChange={handleInputChange}
+                              disabled={isSubmitting}
                               sx={{
                                 border: `1px solid ${
                                   errors.designation ? "#f44336" : "#e8e8e8"
@@ -290,6 +368,7 @@ const Contactus = () => {
                               name="contactNo"
                               value={formData.contactNo}
                               onChange={handleInputChange}
+                              disabled={isSubmitting}
                               sx={{
                                 border: `1px solid ${
                                   errors.contactNo ? "#f44336" : "#e8e8e8"
@@ -314,6 +393,7 @@ const Contactus = () => {
                               name="email"
                               value={formData.email}
                               onChange={handleInputChange}
+                              disabled={isSubmitting}
                               sx={{
                                 border: `1px solid ${
                                   errors.email ? "#f44336" : "#e8e8e8"
@@ -337,6 +417,7 @@ const Contactus = () => {
                               name="remarks"
                               value={formData.remarks}
                               onChange={handleInputChange}
+                              disabled={isSubmitting}
                               multiline
                               rows={4}
                               sx={{
@@ -381,6 +462,7 @@ const Contactus = () => {
                             <Button
                               type="submit"
                               fullWidth
+                              disabled={isSubmitting}
                               sx={{
                                 textTransform: "none",
                                 bgcolor: "#1877f2",
@@ -391,10 +473,19 @@ const Contactus = () => {
                                 "&:hover": {
                                   bgcolor: "#166fe5",
                                 },
+                                "&:disabled": {
+                                  bgcolor: "#cccccc",
+                                },
                               }}
-                              endIcon={<ArrowOutwardRounded />}
+                              endIcon={
+                                isSubmitting ? (
+                                  <CircularProgress size={20} color="inherit" />
+                                ) : (
+                                  <ArrowOutwardRounded />
+                                )
+                              }
                             >
-                              Submit
+                              {isSubmitting ? "Sending..." : "Submit"}
                             </Button>
                           </Grid>
                         </Grid>
