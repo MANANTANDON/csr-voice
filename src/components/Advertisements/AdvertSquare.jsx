@@ -29,7 +29,7 @@ export const AdvertSquare = () => {
           </Typography>
           <a href="https://snowchildstudio.com/">
             <Image
-              src={"/images/ads/adone.png"}
+              src={"/images/ads/adOne.png"}
               height={230}
               width={320}
               layout="intrinsic"
