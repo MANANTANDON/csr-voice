@@ -4,7 +4,6 @@ import { Laws } from "@/components/Home/Laws";
 import { Sectors } from "@/components/Home/Sectors";
 import { ThirdContainer } from "@/components/Home/ThirdContainer";
 import { TopContainer } from "@/components/Home/TopContainer";
-import { VideoCont } from "@/components/Home/VideoCont";
 import { Layout } from "@/components/Layout/Layout";
 import { API_URL } from "@/constant";
 import axios from "axios";
@@ -12,7 +11,6 @@ import Head from "next/head";
 import { parseStringPromise } from "xml2js";
 
 export default function Home({ posts, rssItems }) {
-  console.log(posts, "VIDEO CHECK");
   return (
     <>
       <Head>

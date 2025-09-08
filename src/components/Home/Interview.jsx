@@ -156,7 +156,7 @@ export const Interviews = () => {
                 </a>
               </Grid>
               <Grid item size={{ xs: 12, md: 4 }}>
-                <VideoCont />
+                {/* <VideoCont /> */}
               </Grid>
             </Grid>
           </Container>
