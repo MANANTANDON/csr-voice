@@ -32,19 +32,19 @@ export default function Home({ posts, rssItems }) {
         <meta name="language" content="English" />
 
         {/* Favicon */}
-        <link rel="icon" href="/images/logo.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png" />
+        <link rel="icon" href="/images/logo.jpg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg" />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/images/logo.png"
+          href="/images/logo.jpg"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/images/logo.png"
+          href="/images/logo.jpg"
         />
 
         {/* Open Graph Meta Tags for Social Media */}
@@ -61,7 +61,7 @@ export default function Home({ posts, rssItems }) {
         <meta property="og:site_name" content="CSR Voice" />
         <meta
           property="og:image"
-          content="https://csrvoice.com/images/logo.png"
+          content="https://csrvoice.com/images/logo.jpg"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
