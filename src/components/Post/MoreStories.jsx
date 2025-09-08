@@ -78,6 +78,8 @@ export const MoreStories = () => {
                     className="font-500"
                     href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
                     sx={{
+                      fontSize: "18px",
+                      lineHeight: "22px",
                       overflow: "hidden",
                       textOverflow: "ellipsis",
                       display: "-webkit-box",
