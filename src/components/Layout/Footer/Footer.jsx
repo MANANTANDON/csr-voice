@@ -125,10 +125,16 @@ export const Footer = () => {
               py: 2,
             }}
           >
-            <Typography sx={{ fontSize: "14px", color: "#41444B" }}>
+            <Typography
+              sx={{ fontSize: "14px", color: "#41444B" }}
+              className="font-600"
+            >
               © {currentYear} CSR Voice. All Rights Reserved.
             </Typography>
-            <Typography sx={{ fontSize: "14px", color: "#41444B" }}>
+            <Typography
+              sx={{ fontSize: "14px", color: "#41444B" }}
+              className="font-600"
+            >
               Powdered by ©{" "}
               <Box
                 component={"a"}

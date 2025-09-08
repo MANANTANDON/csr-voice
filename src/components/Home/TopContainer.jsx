@@ -111,6 +111,7 @@ export const TopContainer = ({ posts }) => {
                   </Typography>
                   <Typography
                     fontSize="14px"
+                    className="font-500"
                     sx={{
                       overflow: "hidden",
                       textOverflow: "ellipsis",
@@ -126,12 +127,20 @@ export const TopContainer = ({ posts }) => {
                   <Typography
                     fontSize={{ xs: "11px", sm: "12px" }}
                     sx={{ color: "#FFFFFF", mt: 1, mb: 2 }}
+                    className="font-600"
                   >
                     <Typography
                       component={"a"}
                       href={`/category/${posts[0]?.categories[0]?.slug}`}
-                      sx={{ color: "#1877F2" }}
-                      fontSize={{ xs: "11px", sm: "12px" }}
+                      sx={{
+                        bgcolor: "#1877F2",
+                        color: "#ffffff",
+                        py: 0.2,
+                        px: 0.5,
+                        borderRadius: "4px",
+                      }}
+                      fontSize={{ xs: "12px", sm: "13px" }}
+                      className="font-600"
                     >
                       {posts[0]?.categories[0]?.name}
                     </Typography>
@@ -215,14 +224,16 @@ export const TopContainer = ({ posts }) => {
                         {useDecodeHtml(item?.title)}
                       </Typography>
                       <Typography
-                        fontSize={{ xs: "11px", sm: "12px" }}
+                        fontSize={{ xs: "12px", sm: "14px" }}
                         sx={{ color: "#000000", my: 1 }}
+                        className="font-600"
                       >
                         <Typography
                           component={"a"}
                           href={`/category/${item?.categories[0]?.slug}`}
                           sx={{ color: "#1877F2" }}
-                          fontSize={{ xs: "11px", sm: "12px" }}
+                          fontSize={{ xs: "12px", sm: "14px" }}
+                          className="font-600"
                         >
                           {useDecodeHtml(item?.categories[0]?.name)}
                         </Typography>

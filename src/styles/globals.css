@@ -100,6 +100,10 @@ a {
   font-family: "AncizarSerif-Medium" !important;
 }
 
+.font-600 {
+  font-family: "AncizarSerif-SemiBold" !important;
+}
+
 .font-700 {
   font-family: "AncizarSerif-Bold" !important;
 }
@@ -110,4 +114,5 @@ a {
 
 .post-cont {
   font-size: 18px;
+  text-align: justify;
 }

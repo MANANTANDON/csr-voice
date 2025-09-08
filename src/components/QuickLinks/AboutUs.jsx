@@ -85,7 +85,7 @@ export const AboutUs = () => {
                 happen to differentiate between claims and reality.
               </Typography>
             </Box>
-            <Typography sx={{ color: "#1877f2" }}>
+            <Typography sx={{ color: "#1877f2" }} className="font-500">
               Published: 10 September 2018
             </Typography>
           </Box>

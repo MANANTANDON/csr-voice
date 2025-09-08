@@ -55,11 +55,13 @@ export const PostPage = ({ post }) => {
                   <Typography
                     fontSize={{ xs: "14px", sm: "16px" }}
                     sx={{ color: "#000000", my: 1 }}
+                    className="font-500"
                   >
                     <Typography
                       variant="span"
                       sx={{ color: "#1877F2" }}
                       fontSize={{ xs: "14px", sm: "16px" }}
+                      className="font-600"
                     >
                       {useDecodeHtml(post?.categories[0]?.name)}
                     </Typography>

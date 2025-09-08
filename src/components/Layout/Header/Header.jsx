@@ -125,6 +125,7 @@ export const Header = () => {
                           position: "relative",
                           borderBottom: "none",
                           textDecoration: "none",
+                          fontSize: "18px",
                           fontWeight: router.asPath === item.link ? 700 : 400,
                           "&::after": {
                             content: '""',
@@ -140,6 +141,7 @@ export const Header = () => {
                             width: "100%",
                           },
                         }}
+                        className="font-500"
                       >
                         {item?.name}
                       </Typography>
@@ -159,11 +161,11 @@ export const Header = () => {
                       component="a"
                       href={item.link}
                       sx={{
+                        fontSize: "18px",
                         position: "relative",
                         borderBottom: "none",
                         textDecoration: "none",
                         pb: 0.3,
-                        fontWeight: router.asPath === item.link ? 700 : 400,
                         "&::after": {
                           content: '""',
                           position: "absolute",
@@ -178,6 +180,9 @@ export const Header = () => {
                           width: "100%",
                         },
                       }}
+                      className={
+                        router.asPath === item.link ? "font-700" : "font-600"
+                      }
                     >
                       {item?.name}
                     </Typography>
@@ -224,11 +229,13 @@ export const Header = () => {
         {SECTORS.map((sector, index) => (
           <MenuItem
             key={index}
+            className="font-500"
             onClick={() => {
               router.push(sector.link);
               handleSectorsClose();
             }}
             sx={{
+              fontSize: "18px",
               "&:hover": {
                 backgroundColor: "#1877F210",
               },
@@ -332,6 +339,9 @@ export const Header = () => {
                       width: "100%",
                     },
                   }}
+                  className={
+                    router.asPath === item.link ? "font-700" : "font-500"
+                  }
                 >
                   {item?.name}
                 </Typography>
@@ -343,7 +353,11 @@ export const Header = () => {
                 aria-controls="panel1d-content"
                 id="panel1d-header"
               >
-                <Typography component="a" href="/category/sectors">
+                <Typography
+                  component="a"
+                  href="/category/sectors"
+                  className="font-500"
+                >
                   Sectors
                 </Typography>
               </AccordionSummary>
@@ -361,7 +375,11 @@ export const Header = () => {
                       },
                     }}
                   >
-                    <a href={sector?.link} style={{ width: "100%" }}>
+                    <a
+                      href={sector?.link}
+                      style={{ width: "100%" }}
+                      className="font-500"
+                    >
                       {sector.name}
                     </a>
                   </MenuItem>

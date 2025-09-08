@@ -49,6 +49,7 @@ export const NewsCard = ({ news }) => {
           <Typography
             fontSize={{ xs: "12px", sm: "14px" }}
             sx={{ color: "#000000", my: 1 }}
+            className="font-600"
           >
             <Typography
               variant="span"
@@ -56,6 +57,7 @@ export const NewsCard = ({ news }) => {
               href={`/category/${news?.categories[0]?.slug}`}
               sx={{ color: "#1877F2" }}
               fontSize={{ xs: "12px", sm: "14px" }}
+              className="font-600"
             >
               {useDecodeHtml(news?.categories[0]?.name)}
             </Typography>
@@ -65,7 +67,7 @@ export const NewsCard = ({ news }) => {
             component={"a"}
             href={`/post/${news?.categories[0]?.slug}/${news?.slug}/${news?.id}`}
             fontSize={{ xs: "20px", sm: "22px" }}
-            lineHeight={{ xs: "24px", sm: "28px" }}
+            lineHeight={{ xs: "24px", sm: "26px" }}
             className="font-500"
             sx={{
               overflow: "hidden",
@@ -84,6 +86,7 @@ export const NewsCard = ({ news }) => {
           </Typography>
           <Typography
             fontSize="14px"
+            lineHeight="18px"
             sx={{
               overflow: "hidden",
               textOverflow: "ellipsis",
@@ -92,6 +95,7 @@ export const NewsCard = ({ news }) => {
               WebkitBoxOrient: "vertical",
               my: 1,
             }}
+            className="font-500"
           >
             {useDecodeHtml(news?.excerpt)}
           </Typography>

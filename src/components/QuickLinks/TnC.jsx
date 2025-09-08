@@ -181,7 +181,7 @@ export const TnC = () => {
                 causes direct or indirect harm to you.
               </Typography>
             </Box>
-            <Typography sx={{ color: "#1877f2" }}>
+            <Typography sx={{ color: "#1877f2" }} className="font-500">
               Published: 10 September 2018
             </Typography>
           </Box>

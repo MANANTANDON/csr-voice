@@ -44,7 +44,7 @@ export const Governance = () => {
                 }}
               >
                 <Typography
-                  fontSize={{ xs: "32px", md: "52px" }}
+                  fontSize={{ xs: "32px", md: "42px" }}
                   className="font-700"
                   sx={{ color: "#080808" }}
                 >
@@ -54,6 +54,7 @@ export const Governance = () => {
                   component="a"
                   href={`/category/${category?.slug}`}
                   fontSize={{ xs: "16px", md: "18px" }}
+                  className="font-600"
                   sx={{
                     color: "#1877F2",
                     "&:hover": {

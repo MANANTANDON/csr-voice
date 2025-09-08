@@ -92,12 +92,14 @@ export const MoreStories = () => {
                   <Typography
                     fontSize={{ xs: "11px", sm: "12px" }}
                     sx={{ color: "#000000", my: 0.5 }}
+                    className="font-500"
                   >
                     <Typography
                       component="a"
                       href={`/category/${item?.categories[0].slug}`}
                       sx={{ color: "#1877F2" }}
                       fontSize={{ xs: "11px", sm: "12px" }}
+                      className="font-600"
                     >
                       {useDecodeHtml(item?.categories[0]?.name)}
                     </Typography>

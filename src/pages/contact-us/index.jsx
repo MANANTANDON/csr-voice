@@ -260,44 +260,20 @@ const Contactus = () => {
                     variant="outlined"
                   >
                     <CardContent>
-                      {submitMessage && (
-                        <Box
-                          sx={{
-                            mb: 3,
-                            p: 2,
-                            borderRadius: 1,
-                            bgcolor:
-                              submitMessage.includes("error") ||
-                              submitMessage.includes("Sorry")
-                                ? "#ffebee"
-                                : "#e8f5e8",
-                            color:
-                              submitMessage.includes("error") ||
-                              submitMessage.includes("Sorry")
-                                ? "#c62828"
-                                : "#2e7d32",
-                            border: `1px solid ${
-                              submitMessage.includes("error") ||
-                              submitMessage.includes("Sorry")
-                                ? "#ef5350"
-                                : "#4caf50"
-                            }`,
-                          }}
-                        >
-                          <Typography>{submitMessage}</Typography>
-                        </Box>
-                      )}
-
                       <form onSubmit={handleSubmit}>
                         <Grid container spacing={2}>
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography>Name *</Typography>
+                            <Typography className="font-500" fontSize={"18px"}>
+                              Name *
+                            </Typography>
                             <InputBase
                               name="name"
+                              className="font-500"
                               value={formData.name}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
+                                fontSize: "18px",
                                 border: `1px solid ${
                                   errors.name ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -315,13 +291,17 @@ const Contactus = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography>Company *</Typography>
+                            <Typography className="font-500" fontSize={"18px"}>
+                              Company *
+                            </Typography>
                             <InputBase
                               name="company"
+                              className="font-500"
                               value={formData.company}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
+                                fontSize: "18px",
                                 border: `1px solid ${
                                   errors.company ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -339,13 +319,17 @@ const Contactus = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography>Designation *</Typography>
+                            <Typography className="font-500" fontSize={"18px"}>
+                              Designation *
+                            </Typography>
                             <InputBase
                               name="designation"
+                              className="font-500"
                               value={formData.designation}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
+                                fontSize: "18px",
                                 border: `1px solid ${
                                   errors.designation ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -363,13 +347,17 @@ const Contactus = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography>Contact No. *</Typography>
+                            <Typography className="font-500" fontSize={"18px"}>
+                              Contact No. *
+                            </Typography>
                             <InputBase
                               name="contactNo"
+                              className="font-500"
                               value={formData.contactNo}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
+                                fontSize: "18px",
                                 border: `1px solid ${
                                   errors.contactNo ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -388,13 +376,17 @@ const Contactus = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography>Email *</Typography>
+                            <Typography className="font-500" fontSize={"18px"}>
+                              Email *
+                            </Typography>
                             <InputBase
                               name="email"
+                              className="font-500"
                               value={formData.email}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
+                                fontSize: "18px",
                                 border: `1px solid ${
                                   errors.email ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -412,15 +404,19 @@ const Contactus = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12 }}>
-                            <Typography>Remarks *</Typography>
+                            <Typography className="font-500" fontSize={"18px"}>
+                              Remarks *
+                            </Typography>
                             <InputBase
                               name="remarks"
+                              className="font-500"
                               value={formData.remarks}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               multiline
                               rows={4}
                               sx={{
+                                fontSize: "18px",
                                 border: `1px solid ${
                                   errors.remarks ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -445,6 +441,7 @@ const Contactus = () => {
                               )}
                               <Typography
                                 variant="caption"
+                                className="font-500"
                                 sx={{
                                   color:
                                     formData.remarks.length > 280
@@ -463,6 +460,7 @@ const Contactus = () => {
                               type="submit"
                               fullWidth
                               disabled={isSubmitting}
+                              className="font-500"
                               sx={{
                                 textTransform: "none",
                                 bgcolor: "#1877f2",
@@ -490,6 +488,33 @@ const Contactus = () => {
                           </Grid>
                         </Grid>
                       </form>
+                      {submitMessage && (
+                        <Box
+                          sx={{
+                            my: 3,
+                            p: 2,
+                            borderRadius: 1,
+                            bgcolor:
+                              submitMessage.includes("error") ||
+                              submitMessage.includes("Sorry")
+                                ? "#ffebee"
+                                : "#e8f5e8",
+                            color:
+                              submitMessage.includes("error") ||
+                              submitMessage.includes("Sorry")
+                                ? "#c62828"
+                                : "#2e7d32",
+                            border: `1px solid ${
+                              submitMessage.includes("error") ||
+                              submitMessage.includes("Sorry")
+                                ? "#ef5350"
+                                : "#4caf50"
+                            }`,
+                          }}
+                        >
+                          <Typography>{submitMessage}</Typography>
+                        </Box>
+                      )}
                     </CardContent>
                   </Card>
                 </Grid>

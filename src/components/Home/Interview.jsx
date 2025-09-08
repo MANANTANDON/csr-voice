@@ -43,7 +43,7 @@ export const Interviews = () => {
               }}
             >
               <Typography
-                fontSize={{ xs: "32px", md: "52px" }}
+                fontSize={{ xs: "32px", md: "42px" }}
                 className="font-700"
                 sx={{ color: "#080808" }}
               >
@@ -124,18 +124,27 @@ export const Interviews = () => {
                           color: "#e8e8e8",
                           my: 1,
                         }}
+                        className="font-600"
                       >
                         {useDecodeHtml(posts[0]?.excerpt)}
                       </Typography>
                       <Typography
                         fontSize={{ xs: "11px", sm: "12px" }}
                         sx={{ color: "#FFFFFF", mt: 1, mb: 2 }}
+                        className="font-600"
                       >
                         <Typography
                           component={"a"}
                           href={`/category/${posts[0]?.categories[0]?.slug}`}
-                          sx={{ color: "#1877F2" }}
+                          sx={{
+                            bgcolor: "#1877F2",
+                            color: "#ffffff",
+                            py: 0.2,
+                            px: 0.5,
+                            borderRadius: "4px",
+                          }}
                           fontSize={{ xs: "11px", sm: "12px" }}
+                          className="font-600"
                         >
                           {useDecodeHtml(posts[0]?.categories[0]?.name)}
                         </Typography>
