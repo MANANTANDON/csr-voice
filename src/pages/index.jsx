@@ -4,6 +4,7 @@ import { Laws } from "@/components/Home/Laws";
 import { Sectors } from "@/components/Home/Sectors";
 import { ThirdContainer } from "@/components/Home/ThirdContainer";
 import { TopContainer } from "@/components/Home/TopContainer";
+import { VideoCont } from "@/components/Home/VideoCont";
 import { Layout } from "@/components/Layout/Layout";
 import { API_URL } from "@/constant";
 import axios from "axios";
@@ -11,6 +12,7 @@ import Head from "next/head";
 import { parseStringPromise } from "xml2js";
 
 export default function Home({ posts, rssItems }) {
+  console.log(posts, "VIDEO CHECK");
   return (
     <>
       <Head>
@@ -145,6 +147,7 @@ export default function Home({ posts, rssItems }) {
         <AdvertRect />
         <Laws />
         <AdvertRect />
+        {/* <VideoCont /> */}
       </Layout>
     </>
   );
@@ -153,7 +156,7 @@ export default function Home({ posts, rssItems }) {
 export async function getServerSideProps() {
   try {
     const page = 1;
-    const format = "standard";
+    const format = "Standard";
 
     // Fetch custom posts from your CMS
     const postsResponse = await axios.get(

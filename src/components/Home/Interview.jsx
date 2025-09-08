@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useDecodeHtml } from "@/hooks/useDecodeHtml";
 import { API_URL } from "@/constant";
 import { useReadingTime } from "@/hooks/useReadingtime";
+import { VideoCont } from "./VideoCont";
 
 export const Interviews = () => {
   const [posts, setPosts] = useState();
@@ -51,7 +52,7 @@ export const Interviews = () => {
               </Typography>
             </Box>
             <Grid container>
-              <Grid item size={{ xs: 12 }}>
+              <Grid item size={{ xs: 12, md: 8 }}>
                 <a
                   href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
                 >
@@ -153,6 +154,9 @@ export const Interviews = () => {
                     </Box>
                   </Box>
                 </a>
+              </Grid>
+              <Grid item size={{ xs: 12, md: 4 }}>
+                <VideoCont />
               </Grid>
             </Grid>
           </Container>
