@@ -115,7 +115,7 @@ export const Interviews = () => {
                         {posts[0]?.title}
                       </Typography>
                       <Typography
-                        fontSize="14px"
+                        fontSize="16px"
                         sx={{
                           overflow: "hidden",
                           textOverflow: "ellipsis",

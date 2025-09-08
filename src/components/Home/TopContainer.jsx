@@ -110,7 +110,7 @@ export const TopContainer = ({ posts }) => {
                     {useDecodeHtml(posts[0]?.title)}
                   </Typography>
                   <Typography
-                    fontSize="14px"
+                    fontSize="16px"
                     className="font-500"
                     sx={{
                       overflow: "hidden",
