@@ -75,6 +75,7 @@ export const MoreStories = () => {
                 <Box sx={{ width: "100%" }}>
                   <Typography
                     component="a"
+                    className="font-500"
                     href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
                     sx={{
                       overflow: "hidden",
