@@ -131,7 +131,7 @@ export const VideoCont = () => {
             height={isMobile ? "300px" : "500"}
             style={{ borderRadius: "10px" }}
             src={
-              selectedVideo.includes("?")
+              selectedVideo?.includes("?")
                 ? `${selectedVideo}&autoplay=1`
                 : `${selectedVideo}?autoplay=1`
             }
