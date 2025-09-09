@@ -134,6 +134,7 @@ const Category = ({ posts, rssItems, category }) => {
                       },
                     }}
                     onClick={scrollToTop}
+                    className="font-semibold"
                   >
                     Back to top
                   </Button>

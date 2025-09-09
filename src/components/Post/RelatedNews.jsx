@@ -127,6 +127,7 @@ export const RelatedNews = ({ catName }) => {
                     },
                   }}
                   onClick={scrollToTop}
+                  className="font-semibold"
                 >
                   Back to top
                 </Button>

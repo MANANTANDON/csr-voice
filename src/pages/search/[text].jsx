@@ -158,6 +158,7 @@ const Search = ({ posts, rssItems, searchtext }) => {
                           },
                         }}
                         onClick={scrollToTop}
+                        className="font-semibold"
                       >
                         Back to top
                       </Button>
