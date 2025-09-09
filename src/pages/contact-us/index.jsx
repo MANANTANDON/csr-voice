@@ -220,27 +220,24 @@ const Contactus = () => {
               <Grid container>
                 <Grid item size={{ xs: 12, md: 5 }}>
                   <Typography
-                    className="font-700"
-                    sx={{ fontSize: { xs: "32px", md: "42px" } }}
+                    className="font-bold"
+                    sx={{ fontSize: { xs: "26px", md: "30px" } }}
                   >
                     Contact Us
                   </Typography>
-                  <Typography
-                    className="font-500"
-                    sx={{ fontSize: { xs: "16px", md: "18px" } }}
-                  >
+                  <Typography className="font-medium" sx={{ fontSize: "16px" }}>
                     Email:{" "}
                     <a href="mailto:hello@csrvoice.com">hello@csrvoice.com </a>
                   </Typography>
                   <Divider
                     sx={{ width: "90%", margin: "0 auto", my: 3 }}
-                    className="font-500"
+                    className="font-medium"
                   >
                     Or
                   </Divider>
                   <Typography
-                    className="font-500"
-                    sx={{ fontSize: { xs: "18px", md: "20px" } }}
+                    className="font-normal"
+                    sx={{ fontSize: { xs: "16px", md: "18px" } }}
                   >
                     provide your details we will contact you as soon as possible
                   </Typography>
@@ -263,17 +260,20 @@ const Contactus = () => {
                       <form onSubmit={handleSubmit}>
                         <Grid container spacing={2}>
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Name *
                             </Typography>
                             <InputBase
                               name="name"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.name}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.name ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -291,17 +291,20 @@ const Contactus = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Company *
                             </Typography>
                             <InputBase
                               name="company"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.company}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.company ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -319,17 +322,20 @@ const Contactus = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Designation *
                             </Typography>
                             <InputBase
                               name="designation"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.designation}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.designation ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -347,17 +353,20 @@ const Contactus = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Contact No. *
                             </Typography>
                             <InputBase
                               name="contactNo"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.contactNo}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.contactNo ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -376,17 +385,20 @@ const Contactus = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Email *
                             </Typography>
                             <InputBase
                               name="email"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.email}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.email ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -404,19 +416,22 @@ const Contactus = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Remarks *
                             </Typography>
                             <InputBase
                               name="remarks"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.remarks}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               multiline
                               rows={4}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.remarks ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -441,7 +456,7 @@ const Contactus = () => {
                               )}
                               <Typography
                                 variant="caption"
-                                className="font-500"
+                                className="font-medium"
                                 sx={{
                                   color:
                                     formData.remarks.length > 280
@@ -460,14 +475,14 @@ const Contactus = () => {
                               type="submit"
                               fullWidth
                               disabled={isSubmitting}
-                              className="font-500"
+                              className="font-semibold"
                               sx={{
                                 textTransform: "none",
                                 bgcolor: "#1877f2",
                                 color: "#FFFFFF",
                                 mt: 2,
                                 borderRadius: "23px",
-                                fontSize: "20px",
+                                fontSize: "18px",
                                 "&:hover": {
                                   bgcolor: "#166fe5",
                                 },
@@ -512,7 +527,9 @@ const Contactus = () => {
                             }`,
                           }}
                         >
-                          <Typography>{submitMessage}</Typography>
+                          <Typography className="font-bold">
+                            {submitMessage}
+                          </Typography>
                         </Box>
                       )}
                     </CardContent>

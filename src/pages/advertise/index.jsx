@@ -228,14 +228,14 @@ const Advertise = () => {
               <Grid container>
                 <Grid item size={{ xs: 12, md: 5 }}>
                   <Typography
-                    className="font-700"
-                    sx={{ fontSize: { xs: "32px", md: "42px" } }}
+                    className="font-bold"
+                    sx={{ fontSize: { xs: "26px", md: "30px" } }}
                   >
                     Advertise with us
                   </Typography>
                   <Typography
-                    className="font-500"
-                    sx={{ fontSize: { xs: "18px", md: "20px" } }}
+                    className="font-medium"
+                    sx={{ fontSize: { xs: "16px", md: "18px" } }}
                   >
                     Please fill the below form to receive advertisement tariff
                   </Typography>
@@ -258,17 +258,20 @@ const Advertise = () => {
                       <form onSubmit={handleSubmit}>
                         <Grid container spacing={2}>
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Name *
                             </Typography>
                             <InputBase
                               name="name"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.name}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.name ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -286,17 +289,20 @@ const Advertise = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Company *
                             </Typography>
                             <InputBase
                               name="company"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.company}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.company ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -314,17 +320,20 @@ const Advertise = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Designation *
                             </Typography>
                             <InputBase
                               name="designation"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.designation}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.designation ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -342,17 +351,20 @@ const Advertise = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Address *
                             </Typography>
                             <InputBase
                               name="address"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.address}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.address ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -370,17 +382,20 @@ const Advertise = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Contact No. *
                             </Typography>
                             <InputBase
                               name="contactNo"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.contactNo}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.contactNo ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -399,17 +414,20 @@ const Advertise = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12, md: 6 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Email *
                             </Typography>
                             <InputBase
                               name="email"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.email}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.email ? "#f44336" : "#e8e8e8"
                                 }`,
@@ -427,19 +445,22 @@ const Advertise = () => {
                           </Grid>
 
                           <Grid item size={{ xs: 12 }}>
-                            <Typography className="font-500" fontSize={"18px"}>
+                            <Typography
+                              className="font-medium"
+                              fontSize={"16px"}
+                            >
                               Advertisement Query *
                             </Typography>
                             <InputBase
                               name="advertisementQuery"
-                              className="font-500"
+                              className="font-normal"
                               value={formData.advertisementQuery}
                               onChange={handleInputChange}
                               disabled={isSubmitting}
                               multiline
                               rows={4}
                               sx={{
-                                fontSize: "18px",
+                                fontSize: "16px",
                                 border: `1px solid ${
                                   errors.advertisementQuery
                                     ? "#f44336"
@@ -466,7 +487,7 @@ const Advertise = () => {
                               )}
                               <Typography
                                 variant="caption"
-                                className="font-500"
+                                className="font-medium"
                                 sx={{
                                   color:
                                     formData.advertisementQuery.length > 280
@@ -483,7 +504,7 @@ const Advertise = () => {
                           <Grid item size={{ xs: 12 }}>
                             <Button
                               type="submit"
-                              className="font-500"
+                              className="font-semibold"
                               fullWidth
                               disabled={isSubmitting}
                               sx={{
@@ -492,7 +513,7 @@ const Advertise = () => {
                                 color: "#FFFFFF",
                                 mt: 2,
                                 borderRadius: "23px",
-                                fontSize: "20px",
+                                fontSize: "18px",
                                 "&:hover": {
                                   bgcolor: "#166fe5",
                                 },
@@ -537,7 +558,9 @@ const Advertise = () => {
                             }`,
                           }}
                         >
-                          <Typography>{submitMessage}</Typography>
+                          <Typography className="font-bold">
+                            {submitMessage}
+                          </Typography>
                         </Box>
                       )}
                     </CardContent>

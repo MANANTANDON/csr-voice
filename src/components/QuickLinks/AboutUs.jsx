@@ -4,8 +4,8 @@ import React from "react";
 export const AboutUs = () => {
   // ✅ Common style for all paragraphs
   const textStyle = {
-    fontSize: { xs: "18px", md: "20px" },
-    lineHeight: { xs: "24px", md: "30px" },
+    fontSize: { xs: "16px", md: "18px" },
+    lineHeight: { xs: "24px", md: "27px" },
   };
 
   return (
@@ -21,35 +21,35 @@ export const AboutUs = () => {
           }}
         >
           <Typography
-            className="font-700"
+            className="font-bold"
             sx={{ fontSize: { xs: "26px", md: "30px" } }}
           >
             About Us
           </Typography>
 
           <Box sx={{ display: "flex", gap: 2, flexDirection: "column", my: 5 }}>
-            <Typography className="font-500" sx={textStyle}>
+            <Typography className="font-normal" sx={textStyle}>
               We at the CSR Voice are a group of dedicated journalists, writers,
               investigators and researchers who believe in highlighting every
               action that helps communities and groups to serve as an example
               for more people to help promote the goodness of things.
             </Typography>
 
-            <Typography className="font-500" sx={textStyle}>
+            <Typography className="font-normal" sx={textStyle}>
               We think that every reasonable effort must be appreciated,
               reported and replicated by others so that the chain of examples
               helps promote and preserve this world the way it was intended to
               be my nature.
             </Typography>
 
-            <Typography className="font-500" sx={textStyle}>
+            <Typography className="font-normal" sx={textStyle}>
               Our team travels to reach every nook and corner where Corporates
               are involved in CSR activity. Having verified the genuineness of
               projects, we report them as stories for our readers and others
               seeking inspiration.
             </Typography>
 
-            <Typography className="font-500" sx={textStyle}>
+            <Typography className="font-normal" sx={textStyle}>
               Our stories and write-ups on the website catalyze inspiration for
               more and more people to come out and do good for the world and its
               habitants, may this be in the form of providing education to
@@ -64,7 +64,7 @@ export const AboutUs = () => {
             </Typography>
           </Box>
 
-          <Typography sx={{ color: "#1877f2" }} className="font-500">
+          <Typography sx={{ color: "#1877f2" }} className="font-normal">
             Published: 10 September 2018
           </Typography>
         </Box>

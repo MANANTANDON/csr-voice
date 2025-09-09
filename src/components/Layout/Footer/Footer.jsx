@@ -141,7 +141,7 @@ export const Footer = () => {
                 href="https://snowchildstudio.com"
                 target="_blank"
               >
-                Snowchild Studios
+                Snowchild Studio
               </Box>
             </Typography>
           </Box>
