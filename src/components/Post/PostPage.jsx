@@ -7,8 +7,10 @@ import { useReadingTime } from "@/hooks/useReadingtime";
 import { Sharing } from "../Sharing/Sharing";
 import { INIT_URI } from "@/constant";
 import { AdvertSquare } from "../Advertisements/AdvertSquare";
+import useDateFormat from "@/hooks/useDateFormat";
 
 export const PostPage = ({ post }) => {
+  console.log(post);
   const slug = `${INIT_URI}/post/${post?.categories[0]?.slug}/${post?.slug}/${post?.id}`;
   return (
     <>
@@ -24,48 +26,48 @@ export const PostPage = ({ post }) => {
             }}
           >
             <Grid container>
-              <Grid item size={{ xs: 12, md: 8.5 }} sx={{ overflow: "hidden" }}>
+              <Grid item size={{ xs: 12, md: 8 }} sx={{}}>
                 <Box>
                   <Typography
-                    className="font-700"
-                    fontSize={{ xs: "28px", md: "45px" }}
-                    lineHeight={{ xs: "32px", md: "55px" }}
+                    className="font-bold"
+                    fontSize={{ xs: "24px", md: "35px" }}
+                    lineHeight={{ xs: "32px", md: "45px" }}
                   >
                     {useDecodeHtml(post?.title)}
                   </Typography>
                 </Box>
 
                 <Box sx={{ my: 1 }}>
-                  <Typography
-                    className="font-500"
-                    fontSize={{ xs: "16px", md: "18px" }}
-                  >
+                  <Typography className="font-medium">
                     {useDecodeHtml(post?.excerpt)}
                   </Typography>
                 </Box>
                 <Box
                   sx={{
-                    mt: 2,
+                    mt: 3,
                     mb: 3,
                     display: "flex",
-                    alignItems: "center",
+                    flexDirection: { xs: "column", md: "row" },
+                    alignItems: { xs: "flex-start", md: "center" },
                     justifyContent: "space-between",
                   }}
                 >
                   <Typography
-                    fontSize={{ xs: "14px", sm: "16px" }}
-                    sx={{ color: "#000000", my: 1 }}
-                    className="font-500"
+                    fontSize="14px"
+                    sx={{ color: "#000000", mt: 1, mb: { xs: 2, md: 1 } }}
+                    className="font-medium"
                   >
                     <Typography
                       variant="span"
                       sx={{ color: "#1877F2" }}
-                      fontSize={{ xs: "14px", sm: "16px" }}
-                      className="font-600"
+                      fontSize="14px"
+                      className="font-medium"
                     >
                       {useDecodeHtml(post?.categories[0]?.name)}
                     </Typography>
-                    {` • ${useReadingTime(post?.content)}`}
+                    {` • ${useReadingTime(post?.content)} • ${useDateFormat(
+                      post?.modified
+                    )}`}
                   </Typography>
                   <Sharing text={useDecodeHtml(post?.title)} slug={slug} />
                 </Box>
@@ -79,7 +81,6 @@ export const PostPage = ({ post }) => {
                     position: "relative",
                     height: { xs: "200px", md: "500px" },
                     width: "100%",
-                    borderRadius: "7px",
                     overflow: "hidden",
                   }}
                 >
@@ -90,10 +91,17 @@ export const PostPage = ({ post }) => {
                     objectPosition="center"
                   />
                 </Box>
-                <Box sx={{ borderTop: "1.5px solid #e8e8e8", mt: 2 }}>
+                <Box
+                  sx={{
+                    borderTop: "1.5px solid #e8e8e8",
+                    borderBottom: "1.5px solid #e8e8e8",
+                    mt: 2,
+                    mx: { xs: 0, md: 4, lg: 8 },
+                  }}
+                >
                   <div
                     dangerouslySetInnerHTML={{ __html: post?.content }}
-                    className="font-500 post-cont"
+                    className="post-cont"
                   />
                 </Box>
                 <Box
@@ -102,7 +110,6 @@ export const PostPage = ({ post }) => {
                     alignItems: "center",
                     justifyContent: "center",
                     flexDirection: "column",
-                    borderTop: "1.5px solid #e8e8e8",
                     p: 2,
                   }}
                 >
@@ -113,9 +120,9 @@ export const PostPage = ({ post }) => {
               {/* Right Container */}
               <Grid
                 item
-                size={{ xs: 12, md: 3.5 }}
+                size={{ xs: 12, md: 4 }}
                 sx={{
-                  pl: { xs: 0, md: 2 },
+                  pl: { xs: 0, md: 4 },
                   pt: { xs: 2, md: 0 },
                   borderTop: { xs: "1.5px solid #e8e8e8", md: "none" },
                 }}

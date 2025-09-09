@@ -126,6 +126,13 @@ a {
 .post-cont {
   font-size: 18px;
   text-align: justify;
+  font-family: "SF Pro Display" !important;
+  line-height: 29px;
+}
+
+.post-cont img {
+  width: 100%;
+  height: 400px;
 }
 
 /* Better utility classes - you can use these OR just font-weight directly */
@@ -164,4 +171,15 @@ a {
 .font-black {
   font-family: "SF Pro Display" !important;
   font-weight: 900 !important;
+}
+
+@media (max-width: 500px) {
+  .post-cont {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .post-cont img {
+    width: 100%;
+    height: 200px;
+  }
 }
