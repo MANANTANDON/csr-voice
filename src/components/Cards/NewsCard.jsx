@@ -47,17 +47,17 @@ export const NewsCard = ({ news }) => {
             </Box>
           </a>
           <Typography
-            fontSize={{ xs: "12px", sm: "14px" }}
+            fontSize="13px"
             sx={{ color: "#000000", my: 1 }}
-            className="font-600"
+            className="font-medium"
           >
             <Typography
               variant="span"
               component={"a"}
               href={`/category/${news?.categories[0]?.slug}`}
               sx={{ color: "#1877F2" }}
-              fontSize={{ xs: "12px", sm: "14px" }}
-              className="font-600"
+              fontSize="13px"
+              className="font-medium"
             >
               {useDecodeHtml(news?.categories[0]?.name)}
             </Typography>
@@ -66,9 +66,9 @@ export const NewsCard = ({ news }) => {
           <Typography
             component={"a"}
             href={`/post/${news?.categories[0]?.slug}/${news?.slug}/${news?.id}`}
-            fontSize={{ xs: "20px", sm: "22px" }}
-            lineHeight={{ xs: "24px", sm: "26px" }}
-            className="font-500"
+            fontSize={{ xs: "20px", sm: "20px" }}
+            lineHeight="28px"
+            className="font-semibold"
             sx={{
               overflow: "hidden",
               textOverflow: "ellipsis",
@@ -86,7 +86,6 @@ export const NewsCard = ({ news }) => {
           </Typography>
           <Typography
             fontSize="14px"
-            lineHeight="18px"
             sx={{
               overflow: "hidden",
               textOverflow: "ellipsis",
@@ -95,7 +94,7 @@ export const NewsCard = ({ news }) => {
               WebkitBoxOrient: "vertical",
               my: 1,
             }}
-            className="font-500"
+            className="font-normal"
           >
             {useDecodeHtml(news?.excerpt)}
           </Typography>

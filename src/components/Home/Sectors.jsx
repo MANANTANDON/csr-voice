@@ -53,8 +53,8 @@ export const Sectors = () => {
                 }}
               >
                 <Typography
-                  fontSize={{ xs: "32px", md: "42px" }}
-                  className="font-700"
+                  fontSize={{ xs: "28px", md: "38px" }}
+                  className="font-semibold"
                   sx={{ color: "#080808" }}
                 >
                   {category?.name}
@@ -63,7 +63,7 @@ export const Sectors = () => {
                   component="a"
                   href={`/category/${category?.slug}`}
                   fontSize={{ xs: "16px", md: "18px" }}
-                  className="font-600"
+                  className="font-medium"
                   sx={{
                     color: "#1877F2",
                     "&:hover": {
@@ -75,7 +75,7 @@ export const Sectors = () => {
                   See All
                 </Typography>
               </Box>
-              <Grid container>
+              <Grid container gap={{ xs: 2, md: 0 }} sx={{ mt: 2 }}>
                 {posts?.map((item, key) => (
                   <Grid item size={{ xs: 12, md: 3 }} key={key}>
                     <NewsCard news={item} />

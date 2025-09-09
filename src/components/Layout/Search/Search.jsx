@@ -81,13 +81,13 @@ export const Search = ({ setModalOpen }) => {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <InputBase
             placeholder="Search Posts..."
-            className="font-500"
+            className="font-medium"
             fullWidth
             value={searchText}
             onChange={handleInputChange}
             onKeyPress={handleKeyPress}
             sx={{
-              fontSize: "18px",
+              fontSize: "16px",
               border: error ? "1px solid #f44336" : "1px solid transparent",
               borderRadius: 1,
               px: 1,

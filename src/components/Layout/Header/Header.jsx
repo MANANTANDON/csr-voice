@@ -125,8 +125,7 @@ export const Header = () => {
                           position: "relative",
                           borderBottom: "none",
                           textDecoration: "none",
-                          fontSize: "18px",
-                          fontWeight: router.asPath === item.link ? 700 : 400,
+                          fontSize: "16px",
                           "&::after": {
                             content: '""',
                             position: "absolute",
@@ -141,7 +140,11 @@ export const Header = () => {
                             width: "100%",
                           },
                         }}
-                        className="font-500"
+                        className={
+                          router.asPath === item.link
+                            ? "font-bold"
+                            : "font-normal"
+                        }
                       >
                         {item?.name}
                       </Typography>
@@ -161,7 +164,7 @@ export const Header = () => {
                       component="a"
                       href={item.link}
                       sx={{
-                        fontSize: "18px",
+                        fontSize: "16px",
                         position: "relative",
                         borderBottom: "none",
                         textDecoration: "none",
@@ -181,7 +184,9 @@ export const Header = () => {
                         },
                       }}
                       className={
-                        router.asPath === item.link ? "font-700" : "font-600"
+                        router.asPath === item.link
+                          ? "font-bold"
+                          : "font-normal"
                       }
                     >
                       {item?.name}
@@ -229,7 +234,7 @@ export const Header = () => {
         {SECTORS.map((sector, index) => (
           <MenuItem
             key={index}
-            className="font-500"
+            className="font-medium"
             onClick={() => {
               router.push(sector.link);
               handleSectorsClose();
@@ -324,7 +329,6 @@ export const Header = () => {
                     borderBottom: "none",
                     textDecoration: "none",
                     pb: 0.5,
-                    fontWeight: router.asPath === item.link ? 700 : 400,
                     "&::after": {
                       content: '""',
                       position: "absolute",
@@ -340,7 +344,7 @@ export const Header = () => {
                     },
                   }}
                   className={
-                    router.asPath === item.link ? "font-700" : "font-500"
+                    router.asPath === item.link ? "font-bold" : "font-medium"
                   }
                 >
                   {item?.name}
@@ -356,7 +360,7 @@ export const Header = () => {
                 <Typography
                   component="a"
                   href="/category/sectors"
-                  className="font-500"
+                  className="font-medium"
                 >
                   Sectors
                 </Typography>
@@ -378,7 +382,7 @@ export const Header = () => {
                     <a
                       href={sector?.link}
                       style={{ width: "100%" }}
-                      className="font-500"
+                      className="font-medium"
                     >
                       {sector.name}
                     </a>

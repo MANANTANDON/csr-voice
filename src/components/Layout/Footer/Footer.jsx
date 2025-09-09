@@ -66,7 +66,7 @@ export const Footer = () => {
               }}
             >
               <Box>
-                <Typography className="font-700" fontSize={"18px"}>
+                <Typography className="font-bold" fontSize="18px">
                   Categories
                 </Typography>
                 <Box
@@ -80,7 +80,7 @@ export const Footer = () => {
                     <Typography
                       component="a"
                       href={item.link}
-                      className="font-500"
+                      className="font-medium"
                       key={key}
                       sx={{ width: "fit-content" }}
                     >
@@ -90,7 +90,7 @@ export const Footer = () => {
                 </Box>
               </Box>
               <Box>
-                <Typography className="font-700" fontSize={"18px"}>
+                <Typography className="font-bold" fontSize="18px">
                   Quick Links
                 </Typography>
                 <Box
@@ -104,7 +104,7 @@ export const Footer = () => {
                     <Typography
                       component="a"
                       href={item.link}
-                      className="font-500"
+                      className="font-medium"
                       key={key}
                       sx={{ width: "fit-content" }}
                       fontSize={"16px"}
@@ -127,13 +127,13 @@ export const Footer = () => {
           >
             <Typography
               sx={{ fontSize: "14px", color: "#41444B" }}
-              className="font-600"
+              className="font-normal"
             >
               © {currentYear} CSR Voice. All Rights Reserved.
             </Typography>
             <Typography
               sx={{ fontSize: "14px", color: "#41444B" }}
-              className="font-600"
+              className="font-normal"
             >
               Powdered by ©{" "}
               <Box

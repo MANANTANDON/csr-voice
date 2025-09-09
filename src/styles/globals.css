@@ -1,89 +1,116 @@
+/* Single font family with all weights and styles */
 @font-face {
-  font-family: "AncizarSerif-Black";
-  src: url("/fonts/AncizarSerif-Black.ttf") format("truetype");
-  font-weight: 900;
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
 }
-
 @font-face {
-  font-family: "AncizarSerif-Black-Italic";
-  src: url("/fonts/AncizarSerif-BlackItalic.ttf") format("truetype");
-  font-weight: 900;
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-ThinItalic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
 }
-
 @font-face {
-  font-family: "AncizarSerif-Bold";
-  src: url("/fonts/AncizarSerif-Bold.ttf") format("truetype");
-  font-weight: 700;
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-Ultralight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
 }
-
 @font-face {
-  font-family: "AncizarSerif-Bold-Italic";
-  src: url("/fonts/AncizarSerif-BoldItalic.ttf") format("truetype");
-  font-weight: 700;
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-UltralightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
 }
-
 @font-face {
-  font-family: "AncizarSerif-ExtraBold";
-  src: url("/fonts/AncizarSerif-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-}
-
-@font-face {
-  font-family: "AncizarSerif-ExtraBold-Italic";
-  src: url("/fonts/AncizarSerif-ExtraBoldItalic.ttf") format("truetype");
-  font-weight: 800;
-}
-
-@font-face {
-  font-family: "AncizarSerif-Italic";
-  src: url("/fonts/AncizarSerif-Italic.ttf") format("truetype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "AncizarSerif-Light";
-  src: url("/fonts/AncizarSerif-Light.ttf") format("truetype");
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-Light.otf") format("opentype");
   font-weight: 300;
+  font-style: normal;
 }
-
 @font-face {
-  font-family: "AncizarSerif-Light-Italic";
-  src: url("/fonts/AncizarSerif-LightItalic.ttf") format("truetype");
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-LightItalic.otf") format("opentype");
   font-weight: 300;
+  font-style: italic;
 }
-
 @font-face {
-  font-family: "AncizarSerif-Medium";
-  src: url("/fonts/AncizarSerif-Medium.ttf") format("truetype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "AncizarSerif-Medium-Italic";
-  src: url("/fonts/AncizarSerif-MediumItalic.ttf") format("truetype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "AncizarSerif-Regular";
-  src: url("/fonts/AncizarSerif-Regular.ttf") format("truetype");
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-Regular.otf") format("opentype");
   font-weight: 400;
+  font-style: normal;
 }
-
 @font-face {
-  font-family: "AncizarSerif-SemiBold";
-  src: url("/fonts/AncizarSerif-SemiBold.ttf") format("truetype");
-  font-weight: 600;
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
 }
-
 @font-face {
-  font-family: "AncizarSerif-SemiBold-Italic";
-  src: url("/fonts/AncizarSerif-SemiBoldItalic.ttf") format("truetype");
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-Semibold.otf") format("opentype");
   font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-SemiboldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-HeavyItalic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SF-Pro-Display-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
 }
 
+/* Background styles */
 html {
-  background-color: #eeeeee80; /* For browsers that do not support gradients */
+  background-color: #eeeeee80;
   background-image: linear-gradient(
     to bottom right,
     #eeeeee80 35%,
@@ -96,23 +123,45 @@ a {
   color: #000000;
 }
 
-.font-500 {
-  font-family: "AncizarSerif-Medium" !important;
-}
-
-.font-600 {
-  font-family: "AncizarSerif-SemiBold" !important;
-}
-
-.font-700 {
-  font-family: "AncizarSerif-Bold" !important;
-}
-
-.font-800 {
-  font-family: "AncizarSerif-ExtraBold" !important;
-}
-
 .post-cont {
   font-size: 18px;
   text-align: justify;
+}
+
+/* Better utility classes - you can use these OR just font-weight directly */
+.font-thin {
+  font-family: "SF Pro Display" !important;
+  font-weight: 100 !important;
+}
+.font-ultralight {
+  font-family: "SF Pro Display" !important;
+  font-weight: 200 !important;
+}
+.font-light {
+  font-family: "SF Pro Display" !important;
+  font-weight: 300 !important;
+}
+.font-normal {
+  font-family: "SF Pro Display" !important;
+  font-weight: 400 !important;
+}
+.font-medium {
+  font-family: "SF Pro Display" !important;
+  font-weight: 500 !important;
+}
+.font-semibold {
+  font-family: "SF Pro Display" !important;
+  font-weight: 600 !important;
+}
+.font-bold {
+  font-family: "SF Pro Display" !important;
+  font-weight: 700 !important;
+}
+.font-heavy {
+  font-family: "SF Pro Display" !important;
+  font-weight: 800 !important;
+}
+.font-black {
+  font-family: "SF Pro Display" !important;
+  font-weight: 900 !important;
 }

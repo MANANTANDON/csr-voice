@@ -39,13 +39,13 @@ export const Governance = () => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  my: 1,
+                  my: { xs: 2, md: 1 },
                   px: 1.5,
                 }}
               >
                 <Typography
-                  fontSize={{ xs: "32px", md: "42px" }}
-                  className="font-700"
+                  fontSize={{ xs: "28px", md: "38px" }}
+                  className="font-semibold"
                   sx={{ color: "#080808" }}
                 >
                   {category?.name}
@@ -66,7 +66,7 @@ export const Governance = () => {
                   See All
                 </Typography>
               </Box>
-              <Grid container>
+              <Grid container gap={{ xs: 2, md: 0 }} sx={{ mt: 2 }}>
                 {posts?.map((item, key) => (
                   <Grid item size={{ xs: 12, md: 6 }} key={key}>
                     <NewsCard news={item} />

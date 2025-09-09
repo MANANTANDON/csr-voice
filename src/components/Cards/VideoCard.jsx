@@ -72,9 +72,9 @@ export const VideoCard = ({ news }) => {
           </Box>
 
           <Typography
-            fontSize={{ xs: "20px", sm: "18px" }}
-            lineHeight={{ xs: "24px", sm: "20px" }}
-            className="font-500"
+            fontSize={{ xs: "20px", sm: "20px" }}
+            lineHeight="28px"
+            className="font-semibold"
             sx={{
               my: 1,
               overflow: "hidden",

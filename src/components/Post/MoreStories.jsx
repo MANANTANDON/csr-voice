@@ -34,7 +34,7 @@ export const MoreStories = () => {
       >
         <CardContent>
           <Typography
-            className="font-500"
+            className="font-semibold"
             fontSize={{ xs: "28px", md: "30px" }}
             sx={{ mb: 2, borderBottom: "1.5px solid #000000" }}
           >
@@ -75,11 +75,11 @@ export const MoreStories = () => {
                 <Box sx={{ width: "100%" }}>
                   <Typography
                     component="a"
-                    className="font-500"
+                    fontSize={{ xs: "16px", sm: "18px" }}
+                    lineHeight={{ xs: "22px", sm: "24px" }}
+                    className="font-medium"
                     href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
                     sx={{
-                      fontSize: "18px",
-                      lineHeight: "22px",
                       overflow: "hidden",
                       textOverflow: "ellipsis",
                       display: "-webkit-box",

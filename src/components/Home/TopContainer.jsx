@@ -19,8 +19,8 @@ export const TopContainer = ({ posts }) => {
           }}
         >
           <Typography
-            fontSize={{ xs: "32px", md: "42px" }}
-            className="font-700"
+            fontSize={{ xs: "28px", md: "38px" }}
+            className="font-semibold"
             sx={{
               color: "#080808",
               borderBottom: "3px solid #1877F2",
@@ -90,9 +90,9 @@ export const TopContainer = ({ posts }) => {
                   <Typography
                     component="a"
                     href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
-                    fontSize={{ xs: "25px", md: "30px" }}
-                    lineHeight={{ xs: "28px", md: "35px" }}
-                    className="font-500"
+                    fontSize={{ xs: "20px", md: "26px" }}
+                    lineHeight={{ xs: "28px", md: "32px" }}
+                    className="font-semibold"
                     sx={{
                       overflow: "hidden",
                       textOverflow: "ellipsis",
@@ -110,8 +110,8 @@ export const TopContainer = ({ posts }) => {
                     {useDecodeHtml(posts[0]?.title)}
                   </Typography>
                   <Typography
-                    fontSize="16px"
-                    className="font-500"
+                    fontSize={{ xs: "14px", md: "16px" }}
+                    className="font-medium"
                     sx={{
                       overflow: "hidden",
                       textOverflow: "ellipsis",
@@ -125,9 +125,9 @@ export const TopContainer = ({ posts }) => {
                     {useDecodeHtml(posts[0]?.excerpt)}
                   </Typography>
                   <Typography
-                    fontSize={{ xs: "11px", sm: "12px" }}
+                    fontSize="12px"
                     sx={{ color: "#FFFFFF", mt: 1, mb: 2 }}
-                    className="font-600"
+                    className="font-medium"
                   >
                     <Typography
                       component={"a"}
@@ -139,8 +139,8 @@ export const TopContainer = ({ posts }) => {
                         px: 0.5,
                         borderRadius: "4px",
                       }}
-                      fontSize={{ xs: "12px", sm: "13px" }}
-                      className="font-600"
+                      fontSize="12px"
+                      className="font-medium"
                     >
                       {posts[0]?.categories[0]?.name}
                     </Typography>
@@ -176,7 +176,7 @@ export const TopContainer = ({ posts }) => {
                         position: "relative",
                         overflow: "hidden",
                         height: "90px",
-                        width: "120px",
+                        width: "140px",
                         maxWidth: "150px",
                         borderRadius: "5px",
                         flexShrink: 0,
@@ -205,9 +205,9 @@ export const TopContainer = ({ posts }) => {
                       <Typography
                         component="a"
                         href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
-                        fontSize={{ xs: "20px", sm: "20px" }}
-                        lineHeight={{ xs: "24px", sm: "24px" }}
-                        className="font-500"
+                        fontSize={{ xs: "16px", sm: "18px" }}
+                        lineHeight={{ xs: "22px", sm: "24px" }}
+                        className="font-semibold"
                         sx={{
                           overflow: "hidden",
                           textOverflow: "ellipsis",
@@ -224,16 +224,16 @@ export const TopContainer = ({ posts }) => {
                         {useDecodeHtml(item?.title)}
                       </Typography>
                       <Typography
-                        fontSize={{ xs: "12px", sm: "14px" }}
+                        fontSize="13px"
                         sx={{ color: "#000000", my: 1 }}
-                        className="font-600"
+                        className="font-medium"
                       >
                         <Typography
                           component={"a"}
                           href={`/category/${item?.categories[0]?.slug}`}
                           sx={{ color: "#1877F2" }}
-                          fontSize={{ xs: "12px", sm: "14px" }}
-                          className="font-600"
+                          fontSize="13px"
+                          className="font-medium"
                         >
                           {useDecodeHtml(item?.categories[0]?.name)}
                         </Typography>

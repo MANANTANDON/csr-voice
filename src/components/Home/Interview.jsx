@@ -44,8 +44,8 @@ export const Interviews = () => {
               }}
             >
               <Typography
-                fontSize={{ xs: "32px", md: "42px" }}
-                className="font-700"
+                fontSize={{ xs: "28px", md: "38px" }}
+                className="font-semibold"
                 sx={{ color: "#080808" }}
               >
                 Interviews
@@ -93,9 +93,9 @@ export const Interviews = () => {
                         4d616e616e
                       </Typography>
                       <Typography
-                        fontSize={{ xs: "24px", md: "30px" }}
-                        lineHeight={{ xs: "28px", md: "35px" }}
-                        className="font-500"
+                        fontSize={{ xs: "20px", md: "26px" }}
+                        lineHeight={{ xs: "28px", md: "32px" }}
+                        className="font-semibold"
                         component={"a"}
                         href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
                         sx={{
@@ -112,10 +112,11 @@ export const Interviews = () => {
                           },
                         }}
                       >
-                        {posts[0]?.title}
+                        {useDecodeHtml(posts[0]?.title)}
                       </Typography>
                       <Typography
-                        fontSize="16px"
+                        fontSize={{ xs: "14px", md: "16px" }}
+                        className="font-medium"
                         sx={{
                           overflow: "hidden",
                           textOverflow: "ellipsis",
@@ -125,14 +126,13 @@ export const Interviews = () => {
                           color: "#e8e8e8",
                           my: 1,
                         }}
-                        className="font-600"
                       >
                         {useDecodeHtml(posts[0]?.excerpt)}
                       </Typography>
                       <Typography
-                        fontSize={{ xs: "11px", sm: "12px" }}
                         sx={{ color: "#FFFFFF", mt: 1, mb: 2 }}
-                        className="font-600"
+                        fontSize="12px"
+                        className="font-medium"
                       >
                         <Typography
                           component={"a"}
@@ -144,8 +144,8 @@ export const Interviews = () => {
                             px: 0.5,
                             borderRadius: "4px",
                           }}
-                          fontSize={{ xs: "11px", sm: "12px" }}
-                          className="font-600"
+                          fontSize="12px"
+                          className="font-medium"
                         >
                           {useDecodeHtml(posts[0]?.categories[0]?.name)}
                         </Typography>

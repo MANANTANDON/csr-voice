@@ -90,8 +90,8 @@ const Search = ({ posts, rssItems, searchtext }) => {
               }}
             >
               <Typography
-                fontSize={{ xs: "32px", md: "52px" }}
-                className="font-700"
+                fontSize={{ xs: "28px", md: "38px" }}
+                className="font-semibold"
                 sx={{
                   color: "#080808",
                   borderBottom: "3px solid #1877F2",
@@ -112,8 +112,8 @@ const Search = ({ posts, rssItems, searchtext }) => {
                   }}
                 >
                   <Typography
-                    sx={{ fontSize: { xs: "20px", md: "22px" } }}
-                    className="font-700"
+                    fontSize={{ xs: "20px", md: "22px" }}
+                    className="font-semibold"
                   >
                     No Result Found!
                   </Typography>
