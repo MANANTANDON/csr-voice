@@ -71,50 +71,51 @@ export const PostPage = ({ post }) => {
                   </Typography>
                   <Sharing text={useDecodeHtml(post?.title)} slug={slug} />
                 </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderRadius: "7px",
-                    border: "1px solid #eeeeee",
-                    position: "relative",
-                    height: { xs: "200px", md: "500px" },
-                    width: "100%",
-                    overflow: "hidden",
-                  }}
-                >
-                  <Image
-                    src={post?.featured_image}
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="center"
-                  />
-                </Box>
-                <Box
-                  sx={{
-                    borderTop: "1.5px solid #e8e8e8",
-                    borderBottom: "1.5px solid #e8e8e8",
-                    mt: 2,
-                    mx: { xs: 0, md: 4, lg: 8 },
-                  }}
-                >
-                  <div
-                    dangerouslySetInnerHTML={{ __html: post?.content }}
-                    className="post-cont"
-                  />
-                </Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    p: 2,
-                  }}
-                >
-                  <Typography sx={{ mb: 2 }}>Share this Post on</Typography>
-                  <Sharing text={useDecodeHtml(post?.title)} slug={slug} />
+                <Box sx={{ px: { xs: 0, md: 4, lg: 8 } }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "7px",
+                      border: "1px solid #eeeeee",
+                      position: "relative",
+                      height: { xs: "200px", md: "490px" },
+                      width: "100%",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <Image
+                      src={post?.featured_image}
+                      layout="fill"
+                      objectFit="cover"
+                      objectPosition="center"
+                    />
+                  </Box>
+                  <Box
+                    sx={{
+                      borderTop: "1.5px solid #e8e8e8",
+                      borderBottom: "1.5px solid #e8e8e8",
+                      mt: 2,
+                    }}
+                  >
+                    <div
+                      dangerouslySetInnerHTML={{ __html: post?.content }}
+                      className="post-cont"
+                    />
+                  </Box>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexDirection: "column",
+                      p: 2,
+                    }}
+                  >
+                    <Typography sx={{ mb: 2 }}>Share this Post on</Typography>
+                    <Sharing text={useDecodeHtml(post?.title)} slug={slug} />
+                  </Box>
                 </Box>
               </Grid>
               {/* Right Container */}
