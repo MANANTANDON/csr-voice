@@ -10,46 +10,56 @@ import { AdvertSquare } from "../Advertisements/AdvertSquare";
 import useDateFormat from "@/hooks/useDateFormat";
 
 export const PostPage = ({ post }) => {
-  console.log(post);
   const slug = `${INIT_URI}/post/${post?.categories[0]?.slug}/${post?.slug}/${post?.id}`;
   return (
     <>
-      <Box sx={{ my: { xs: 2, md: 5 } }}>
-        <Container maxWidth="xl">
+      <Box
+        sx={{
+          my: { xs: 2, md: 3 },
+          mx: { xs: 1, md: 5 },
+        }}
+      >
+        <Container
+          maxWidth="xl"
+          sx={{
+            bgcolor: "#FFFFFF",
+            borderRadius: "7px",
+            border: "1.5px solid #e8e8e8",
+          }}
+        >
           <Box
             sx={{
-              bgcolor: "#FFFFFF",
+              ml: { xs: -1, lg: 4 },
               p: 2,
-              borderRadius: "7px",
-              border: "1.5px solid #e8e8e8",
-              mx: { xs: -1, md: 0 },
             }}
           >
-            <Grid container>
-              <Grid item size={{ xs: 12, md: 8 }} sx={{}}>
-                <Box>
-                  <Typography
-                    className="font-bold"
-                    fontSize={{ xs: "24px", md: "35px" }}
-                    lineHeight={{ xs: "32px", md: "45px" }}
-                  >
-                    {useDecodeHtml(post?.title)}
-                  </Typography>
-                </Box>
+            <Box>
+              <Typography
+                className="font-bold"
+                fontSize={{ xs: "24px", md: "38px" }}
+                lineHeight={{ xs: "32px", md: "45px" }}
+                sx={{ mt: { xs: 0, md: 2 } }}
+              >
+                {useDecodeHtml(post?.title)}
+              </Typography>
+            </Box>
 
-                <Box sx={{ my: 1 }}>
-                  <Typography className="font-medium">
-                    {useDecodeHtml(post?.excerpt)}
-                  </Typography>
-                </Box>
+            <Box sx={{ my: 1 }}>
+              <Typography className="font-medium">
+                {useDecodeHtml(post?.excerpt)}
+              </Typography>
+            </Box>
+            <Grid container>
+              <Grid item size={{ xs: 12, lg: 8.5 }} sx={{}}>
                 <Box
                   sx={{
-                    mt: 3,
-                    mb: 3,
+                    mt: { xs: 0, md: 2 },
+                    mb: 2,
                     display: "flex",
                     flexDirection: { xs: "column", md: "row" },
                     alignItems: { xs: "flex-start", md: "center" },
                     justifyContent: "space-between",
+                    pr: { xs: 0, md: 2, lg: 5 },
                   }}
                 >
                   <Typography
@@ -71,7 +81,7 @@ export const PostPage = ({ post }) => {
                   </Typography>
                   <Sharing text={useDecodeHtml(post?.title)} slug={slug} />
                 </Box>
-                <Box sx={{ px: { xs: 0, md: 4, lg: 8 } }}>
+                <Box sx={{ pr: { xs: 0, md: 2, lg: 5 } }}>
                   <Box
                     sx={{
                       display: "flex",
@@ -80,7 +90,7 @@ export const PostPage = ({ post }) => {
                       borderRadius: "7px",
                       border: "1px solid #eeeeee",
                       position: "relative",
-                      height: { xs: "200px", md: "490px" },
+                      height: { xs: "200px", sm: "400px", md: "490px" },
                       width: "100%",
                       overflow: "hidden",
                     }}
@@ -121,10 +131,11 @@ export const PostPage = ({ post }) => {
               {/* Right Container */}
               <Grid
                 item
-                size={{ xs: 12, md: 4 }}
+                size={{ xs: 12, lg: 3.5 }}
                 sx={{
                   pl: { xs: 0, md: 4 },
                   pt: { xs: 2, md: 0 },
+                  mt: { xs: 3 },
                   borderTop: { xs: "1.5px solid #e8e8e8", md: "none" },
                 }}
               >

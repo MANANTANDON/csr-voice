@@ -66,8 +66,8 @@ export const NewsCard = ({ news }) => {
           <Typography
             component={"a"}
             href={`/post/${news?.categories[0]?.slug}/${news?.slug}/${news?.id}`}
-            fontSize={{ xs: "20px", sm: "20px" }}
-            lineHeight="28px"
+            fontSize="20px"
+            lineHeight="26px"
             className="font-semibold"
             sx={{
               overflow: "hidden",

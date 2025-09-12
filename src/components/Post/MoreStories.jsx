@@ -75,8 +75,18 @@ export const MoreStories = () => {
                 <Box sx={{ width: "100%" }}>
                   <Typography
                     component="a"
-                    fontSize={{ xs: "16px", sm: "18px" }}
-                    lineHeight={{ xs: "22px", sm: "24px" }}
+                    fontSize={{
+                      xs: "16px",
+                      sm: "18px",
+                      md: "16px",
+                      lg: "18px",
+                    }}
+                    lineHeight={{
+                      xs: "22px",
+                      sm: "24px",
+                      xs: "22px",
+                      sm: "24px",
+                    }}
                     className="font-medium"
                     href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
                     sx={{
