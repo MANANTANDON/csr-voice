@@ -81,7 +81,7 @@ export const Search = ({ setModalOpen }) => {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <InputBase
             placeholder="Search Posts..."
-            className="font-medium"
+            className="font-normal"
             fullWidth
             value={searchText}
             onChange={handleInputChange}

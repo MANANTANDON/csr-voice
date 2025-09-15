@@ -1,8 +1,8 @@
 import { NewsCard } from "@/components/Cards/NewsCard";
 import { Layout } from "@/components/Layout/Layout";
+import { HeadingTypographyTwo } from "@/components/Typographies/HeadingTypographyTwo";
 import { API_URL } from "@/constant";
-import { useDecodeHtml } from "@/hooks/useDecodeHtml";
-import { Button, CircularProgress, Container, Typography } from "@mui/material";
+import { Button, CircularProgress, Container } from "@mui/material";
 import { Box, Grid } from "@mui/system";
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
@@ -84,18 +84,8 @@ const Category = ({ posts, rssItems, category }) => {
                 border: "1.5px solid #e8e8e8",
               }}
             >
-              <Typography
-                fontSize={{ xs: "28px", md: "38px" }}
-                className="font-text-bold"
-                sx={{
-                  color: "#080808",
-                  borderBottom: "3px solid #1877F2",
-                  pb: -2,
-                  mb: 2,
-                }}
-              >
-                {useDecodeHtml(posts?.category?.name)}
-              </Typography>
+              {/* Category Heading */}
+              <HeadingTypographyTwo title={posts?.category?.name} />
               <Grid container rowGap={{ xs: 1, md: 5 }}>
                 {posts?.data?.map((item, key) => (
                   <Grid item size={{ xs: 12, md: 3 }} key={key}>

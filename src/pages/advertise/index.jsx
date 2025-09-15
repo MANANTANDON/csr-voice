@@ -234,7 +234,7 @@ const Advertise = () => {
                     Advertise with us
                   </Typography>
                   <Typography
-                    className="font-medium"
+                    className="font-normal"
                     sx={{ fontSize: { xs: "16px", md: "18px" } }}
                   >
                     Please fill the below form to receive advertisement tariff
@@ -259,7 +259,7 @@ const Advertise = () => {
                         <Grid container spacing={2}>
                           <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Name *
@@ -290,7 +290,7 @@ const Advertise = () => {
 
                           <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Company *
@@ -321,7 +321,7 @@ const Advertise = () => {
 
                           <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Designation *
@@ -352,7 +352,7 @@ const Advertise = () => {
 
                           <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Address *
@@ -383,7 +383,7 @@ const Advertise = () => {
 
                           <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Contact No. *
@@ -415,7 +415,7 @@ const Advertise = () => {
 
                           <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Email *
@@ -446,7 +446,7 @@ const Advertise = () => {
 
                           <Grid item size={{ xs: 12 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Advertisement Query *
@@ -487,7 +487,7 @@ const Advertise = () => {
                               )}
                               <Typography
                                 variant="caption"
-                                className="font-medium"
+                                className="font-normal"
                                 sx={{
                                   color:
                                     formData.advertisementQuery.length > 280

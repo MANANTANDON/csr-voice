@@ -6,6 +6,10 @@ import { useDecodeHtml } from "@/hooks/useDecodeHtml";
 import { API_URL } from "@/constant";
 import { useReadingTime } from "@/hooks/useReadingtime";
 import { VideoCont } from "./VideoCont";
+import { HeadingTypography } from "../Typographies/HeadingTypography";
+import { TypographyOne } from "../Typographies/TypographyOne";
+import { SubheadingOne } from "../Typographies/SubheadingOne";
+import { PostDeetsOne } from "../Typographies/PostDeetsOne";
 
 export const Interviews = () => {
   const [posts, setPosts] = useState();
@@ -43,13 +47,8 @@ export const Interviews = () => {
                 mx: { xs: -1, md: 0 },
               }}
             >
-              <Typography
-                fontSize={{ xs: "28px", md: "38px" }}
-                className="font-text-bold"
-                sx={{ color: "#080808" }}
-              >
-                Interviews
-              </Typography>
+              {/* Category Heading */}
+              <HeadingTypography title="Interviews" />
             </Box>
             <Grid container>
               <Grid item size={{ xs: 12, md: 8 }}>
@@ -75,6 +74,7 @@ export const Interviews = () => {
                       sx={{
                         position: "absolute",
                         bottom: 0,
+                        pb: 1,
                         px: { xs: 2, md: 4 },
                         background:
                           "linear-gradient(to top, #000000 30%, transparent)",
@@ -92,65 +92,14 @@ export const Interviews = () => {
                       >
                         4d616e616e
                       </Typography>
-                      <Typography
-                        fontSize={{ xs: "20px", md: "26px" }}
-                        lineHeight={{ xs: "28px", md: "32px" }}
-                        className="font-text-bold"
-                        component={"a"}
-                        href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
-                        sx={{
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          display: "-webkit-box",
-                          WebkitLineClamp: "2",
-                          WebkitBoxOrient: "vertical",
-                          color: "#FFFFFF",
-                          my: 1,
-                          "&:hover": {
-                            textDecoration: "underline",
-                            cursor: "pointer",
-                          },
-                        }}
-                      >
-                        {useDecodeHtml(posts[0]?.title)}
-                      </Typography>
-                      <Typography
-                        fontSize={{ xs: "14px", md: "16px" }}
-                        className="font-normal"
-                        sx={{
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          display: "-webkit-box",
-                          WebkitLineClamp: "2",
-                          WebkitBoxOrient: "vertical",
-                          color: "#e8e8e8",
-                          my: 1,
-                        }}
-                      >
-                        {useDecodeHtml(posts[0]?.excerpt)}
-                      </Typography>
-                      <Typography
-                        sx={{ color: "#FFFFFF", mt: 1, mb: 2 }}
-                        fontSize="12px"
-                        className="font-normal"
-                      >
-                        <Typography
-                          component={"a"}
-                          href={`/category/${posts[0]?.categories[0]?.slug}`}
-                          sx={{
-                            bgcolor: "#1877F2",
-                            color: "#ffffff",
-                            py: 0.2,
-                            px: 0.5,
-                            borderRadius: "4px",
-                          }}
-                          fontSize="12px"
-                          className="font-normal"
-                        >
-                          {useDecodeHtml(posts[0]?.categories[0]?.name)}
-                        </Typography>
-                        {` • ${useReadingTime(posts[0]?.content)}`}
-                      </Typography>
+                      {/* Post Title */}
+                      <TypographyOne posts={posts} />
+
+                      {/* Post Subheading */}
+                      <SubheadingOne posts={posts} />
+
+                      {/* Post Details */}
+                      <PostDeetsOne item={posts[0]} inImg={true} />
                     </Box>
                   </Box>
                 </a>

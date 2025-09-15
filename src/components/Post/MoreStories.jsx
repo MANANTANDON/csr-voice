@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import axios from "axios";
 import Image from "next/image";
-import { useDecodeHtml } from "@/hooks/useDecodeHtml";
-import { useReadingTime } from "@/hooks/useReadingtime";
 import { API_URL } from "@/constant";
 import { TypographyTwo } from "../Typographies/TypographyTwo";
 import { PostDeetsOne } from "../Typographies/PostDeetsOne";

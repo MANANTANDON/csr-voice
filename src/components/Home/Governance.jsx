@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import axios from "axios";
 import { NewsCard } from "../Cards/NewsCard";
 import { API_URL } from "@/constant";
+import { HeadingTypography } from "../Typographies/HeadingTypography";
 
 export const Governance = () => {
   const [posts, setPosts] = useState();
@@ -34,38 +35,9 @@ export const Governance = () => {
         <Box sx={{ my: 1 }}>
           <Container maxWidth="xl">
             <Box sx={{ bgcolor: "#FFFFFF", borderRadius: "7px" }}>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  my: { xs: 2, md: 1 },
-                  px: 1.5,
-                }}
-              >
-                <Typography
-                  fontSize={{ xs: "28px", md: "38px" }}
-                  className="font-text-bold"
-                  sx={{ color: "#080808" }}
-                >
-                  {category?.name}
-                </Typography>
-                <Typography
-                  component="a"
-                  href={`/category/${category?.slug}`}
-                  fontSize={{ xs: "16px", md: "18px" }}
-                  className="font-600"
-                  sx={{
-                    color: "#1877F2",
-                    "&:hover": {
-                      textDecoration: "underline",
-                      cursor: "pointer",
-                    },
-                  }}
-                >
-                  See All
-                </Typography>
-              </Box>
+              {/* Category Heading */}
+              <HeadingTypography title={category?.name} slug={category?.slug} />
+
               <Grid container gap={{ xs: 2, md: 0 }} sx={{ mt: 2 }}>
                 {posts?.map((item, key) => (
                   <Grid item size={{ xs: 12, md: 6 }} key={key}>

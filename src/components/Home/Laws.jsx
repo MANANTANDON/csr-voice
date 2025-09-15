@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import axios from "axios";
 import { NewsCard } from "../Cards/NewsCard";
 import { API_URL } from "@/constant";
+import { HeadingTypography } from "../Typographies/HeadingTypography";
 
 export const Laws = () => {
   const [posts, setPosts] = useState();
@@ -43,38 +44,7 @@ export const Laws = () => {
                 mx: { xs: -1, md: 0 },
               }}
             >
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  my: 1,
-                  px: 1.5,
-                }}
-              >
-                <Typography
-                  fontSize={{ xs: "28px", md: "38px" }}
-                  className="font-text-bold"
-                  sx={{ color: "#080808" }}
-                >
-                  {category?.name}
-                </Typography>
-                <Typography
-                  component="a"
-                  href={`/category/${category?.slug}`}
-                  fontSize={{ xs: "16px", md: "18px" }}
-                  className="font-medium"
-                  sx={{
-                    color: "#1877F2",
-                    "&:hover": {
-                      textDecoration: "underline",
-                      cursor: "pointer",
-                    },
-                  }}
-                >
-                  See All
-                </Typography>
-              </Box>
+              <HeadingTypography title={category?.name} slug={category?.slug} />
               <Grid container>
                 {posts?.map((item, key) => (
                   <Grid item size={{ xs: 12, md: 3 }} key={key}>

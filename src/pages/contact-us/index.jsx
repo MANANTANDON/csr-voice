@@ -225,13 +225,13 @@ const Contactus = () => {
                   >
                     Contact Us
                   </Typography>
-                  <Typography className="font-medium" sx={{ fontSize: "16px" }}>
+                  <Typography className="font-normal" sx={{ fontSize: "16px" }}>
                     Email:{" "}
                     <a href="mailto:hello@csrvoice.com">hello@csrvoice.com </a>
                   </Typography>
                   <Divider
                     sx={{ width: "90%", margin: "0 auto", my: 3 }}
-                    className="font-medium"
+                    className="font-normal"
                   >
                     Or
                   </Divider>
@@ -261,7 +261,7 @@ const Contactus = () => {
                         <Grid container spacing={2}>
                           <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Name *
@@ -292,7 +292,7 @@ const Contactus = () => {
 
                           <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Company *
@@ -323,7 +323,7 @@ const Contactus = () => {
 
                           <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Designation *
@@ -354,7 +354,7 @@ const Contactus = () => {
 
                           <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Contact No. *
@@ -386,7 +386,7 @@ const Contactus = () => {
 
                           <Grid item size={{ xs: 12, md: 6 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Email *
@@ -417,7 +417,7 @@ const Contactus = () => {
 
                           <Grid item size={{ xs: 12 }}>
                             <Typography
-                              className="font-medium"
+                              className="font-normal"
                               fontSize={"16px"}
                             >
                               Remarks *
@@ -456,7 +456,7 @@ const Contactus = () => {
                               )}
                               <Typography
                                 variant="caption"
-                                className="font-medium"
+                                className="font-normal"
                                 sx={{
                                   color:
                                     formData.remarks.length > 280
