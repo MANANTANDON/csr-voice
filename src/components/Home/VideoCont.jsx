@@ -14,7 +14,7 @@ import { VideoCard } from "../Cards/VideoCard";
 import { useExtractSrc } from "@/hooks/useExtractSrc";
 import { useDecodeHtml } from "@/hooks/useDecodeHtml";
 import { Close } from "@mui/icons-material";
-import { HeadingTypography } from "../Typographies/HeadingTypography";
+import { HeadingTypographyTwo } from "../Typographies/HeadingTypographyTwo";
 
 export const VideoCont = () => {
   const isMobile = useMediaQuery("(max-width:500px)");
@@ -87,7 +87,7 @@ export const VideoCont = () => {
                 }}
               >
                 {/* Category Title */}
-                <HeadingTypography title="Videos" />
+                <HeadingTypographyTwo title="Videos" />
               </Box>
               <Grid container>
                 {videosData?.map((item, key) => (
