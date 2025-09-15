@@ -4,6 +4,10 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import { useDecodeHtml } from "@/hooks/useDecodeHtml";
 import { useReadingTime } from "@/hooks/useReadingtime";
+import { TypographyOne } from "../Typographies/TypographyOne";
+import { TypographyTwo } from "../Typographies/TypographyTwo";
+import { SubheadingOne } from "../Typographies/SubheadingOne";
+import { PostDeetsOne } from "../Typographies/PostDeetsOne";
 
 export const TopContainer = ({ posts }) => {
   return (
@@ -87,43 +91,11 @@ export const TopContainer = ({ posts }) => {
                   >
                     4d616e616e
                   </Typography>
-                  <Typography
-                    component="a"
-                    href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
-                    fontSize={{ xs: "20px", md: "26px" }}
-                    lineHeight={{ xs: "28px", md: "32px" }}
-                    className="font-text-bold"
-                    sx={{
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      display: "-webkit-box",
-                      WebkitLineClamp: "2",
-                      WebkitBoxOrient: "vertical",
-                      color: "#FFFFFF",
-                      my: 1,
-                      "&:hover": {
-                        textDecoration: "underline",
-                        cursor: "pointer",
-                      },
-                    }}
-                  >
-                    {useDecodeHtml(posts[0]?.title)}
-                  </Typography>
-                  <Typography
-                    fontSize={{ xs: "14px", md: "16px" }}
-                    className="font-normal"
-                    sx={{
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      display: "-webkit-box",
-                      WebkitLineClamp: "2",
-                      WebkitBoxOrient: "vertical",
-                      color: "#e8e8e8",
-                      my: 1,
-                    }}
-                  >
-                    {useDecodeHtml(posts[0]?.excerpt)}
-                  </Typography>
+                  {/* Title of the Post */}
+                  <TypographyOne posts={posts} />
+                  {/* Subheading of the Post */}
+                  <SubheadingOne posts={posts} />
+
                   <Typography
                     fontSize="12px"
                     sx={{ color: "#FFFFFF", mt: 1, mb: 2 }}
@@ -202,43 +174,10 @@ export const TopContainer = ({ posts }) => {
                       </a>
                     </Box>
                     <Box sx={{ flex: 1, minWidth: 0 }}>
-                      <Typography
-                        component="a"
-                        href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
-                        fontSize={{ xs: "16px", sm: "18px" }}
-                        lineHeight={{ xs: "22px", sm: "24px" }}
-                        className="font-text-bold"
-                        sx={{
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          display: "-webkit-box",
-                          WebkitLineClamp: "2",
-                          WebkitBoxOrient: "vertical",
-                          color: "#000000",
-                          "&:hover": {
-                            color: "#00000090",
-                            cursor: "pointer",
-                          },
-                        }}
-                      >
-                        {useDecodeHtml(item?.title)}
-                      </Typography>
-                      <Typography
-                        fontSize="13px"
-                        sx={{ color: "#000000", my: 1 }}
-                        className="font-normal"
-                      >
-                        <Typography
-                          component={"a"}
-                          href={`/category/${item?.categories[0]?.slug}`}
-                          sx={{ color: "#1877F2" }}
-                          fontSize="13px"
-                          className="font-bold"
-                        >
-                          {useDecodeHtml(item?.categories[0]?.name)}
-                        </Typography>
-                        {` • ${useReadingTime(item?.content)}`}
-                      </Typography>
+                      {/*Post Title */}
+                      <TypographyTwo item={item} />
+                      {/*Post Details */}
+                      <PostDeetsOne item={item} />
                     </Box>
                   </Box>
                 ))}

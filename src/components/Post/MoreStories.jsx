@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useDecodeHtml } from "@/hooks/useDecodeHtml";
 import { useReadingTime } from "@/hooks/useReadingtime";
 import { API_URL } from "@/constant";
+import { TypographyTwo } from "../Typographies/TypographyTwo";
+import { PostDeetsOne } from "../Typographies/PostDeetsOne";
 
 export const MoreStories = () => {
   const [data, setData] = useState();
@@ -73,51 +75,11 @@ export const MoreStories = () => {
                   </a>
                 </Box>
                 <Box sx={{ width: "100%" }}>
-                  <Typography
-                    component="a"
-                    fontSize={{
-                      xs: "16px",
-                      sm: "18px",
-                      md: "16px",
-                      lg: "18px",
-                    }}
-                    lineHeight={{
-                      xs: "22px",
-                      sm: "24px",
-                      xs: "22px",
-                      sm: "24px",
-                    }}
-                    className="font-bold"
-                    href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
-                    sx={{
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      display: "-webkit-box",
-                      WebkitLineClamp: "2",
-                      WebkitBoxOrient: "vertical",
-                      "&:hover": {
-                        color: "#00000080",
-                      },
-                    }}
-                  >
-                    {useDecodeHtml(item?.title)}
-                  </Typography>
-                  <Typography
-                    fontSize={{ xs: "11px", sm: "12px" }}
-                    sx={{ color: "#000000", my: 0.5 }}
-                    className="font-normal"
-                  >
-                    <Typography
-                      component="a"
-                      href={`/category/${item?.categories[0].slug}`}
-                      sx={{ color: "#1877F2" }}
-                      fontSize={{ xs: "11px", sm: "12px" }}
-                      className="font-normal"
-                    >
-                      {useDecodeHtml(item?.categories[0]?.name)}
-                    </Typography>
-                    {` • ${useReadingTime(item?.content)}`}
-                  </Typography>
+                  {/* Post Title */}
+                  <TypographyTwo item={item} />
+
+                  {/* Post Deets */}
+                  <PostDeetsOne item={item} />
                 </Box>
               </Box>
             ))}

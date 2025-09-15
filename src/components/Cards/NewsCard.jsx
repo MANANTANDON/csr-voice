@@ -1,8 +1,9 @@
-import { useDecodeHtml } from "@/hooks/useDecodeHtml";
-import { useReadingTime } from "@/hooks/useReadingtime";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent } from "@mui/material";
 import Image from "next/image";
 import React from "react";
+import { TypographyTwo } from "../Typographies/TypographyTwo";
+import { PostDeetsOne } from "../Typographies/PostDeetsOne";
+import { SubheadingTwo } from "../Typographies/SubheadingTwo";
 
 export const NewsCard = ({ news }) => {
   return (
@@ -46,58 +47,15 @@ export const NewsCard = ({ news }) => {
               />
             </Box>
           </a>
-          <Typography
-            fontSize="13px"
-            sx={{ color: "#000000", my: 1 }}
-            className="font-normal"
-          >
-            <Typography
-              variant="span"
-              component={"a"}
-              href={`/category/${news?.categories[0]?.slug}`}
-              sx={{ color: "#1877F2" }}
-              fontSize="13px"
-              className="font-bold"
-            >
-              {useDecodeHtml(news?.categories[0]?.name)}
-            </Typography>
-            {` • ${useReadingTime(news?.content)}`}
-          </Typography>
-          <Typography
-            component={"a"}
-            href={`/post/${news?.categories[0]?.slug}/${news?.slug}/${news?.id}`}
-            fontSize="20px"
-            lineHeight="26px"
-            className="font-text-bold"
-            sx={{
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              display: "-webkit-box",
-              WebkitLineClamp: "2",
-              WebkitBoxOrient: "vertical",
-              color: "#000000",
-              "&:hover": {
-                color: "#00000090",
-                cursor: "pointer",
-              },
-            }}
-          >
-            {useDecodeHtml(news?.title)}
-          </Typography>
-          <Typography
-            fontSize="14px"
-            sx={{
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              display: "-webkit-box",
-              WebkitLineClamp: "2",
-              WebkitBoxOrient: "vertical",
-              my: 1,
-            }}
-            className="font-normal"
-          >
-            {useDecodeHtml(news?.excerpt)}
-          </Typography>
+
+          {/* Post Detials */}
+          <PostDeetsOne item={news} />
+
+          {/* Post Title */}
+          <TypographyTwo item={news} />
+
+          {/* Post Subheading */}
+          <SubheadingTwo item={news} />
         </CardContent>
       </Card>
     </>
