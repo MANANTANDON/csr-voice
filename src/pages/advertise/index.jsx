@@ -504,7 +504,7 @@ const Advertise = () => {
                           <Grid item size={{ xs: 12 }}>
                             <Button
                               type="submit"
-                              className="font-semibold"
+                              className="font-text-bold"
                               fullWidth
                               disabled={isSubmitting}
                               sx={{

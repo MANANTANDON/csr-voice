@@ -34,7 +34,7 @@ export const MoreStories = () => {
       >
         <CardContent>
           <Typography
-            className="font-semibold"
+            className="font-text-bold"
             fontSize={{ xs: "28px", md: "30px" }}
             sx={{ mb: 2, borderBottom: "1.5px solid #000000" }}
           >
@@ -87,7 +87,7 @@ export const MoreStories = () => {
                       xs: "22px",
                       sm: "24px",
                     }}
-                    className="font-medium"
+                    className="font-bold"
                     href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
                     sx={{
                       overflow: "hidden",
@@ -105,14 +105,14 @@ export const MoreStories = () => {
                   <Typography
                     fontSize={{ xs: "11px", sm: "12px" }}
                     sx={{ color: "#000000", my: 0.5 }}
-                    className="font-500"
+                    className="font-normal"
                   >
                     <Typography
                       component="a"
                       href={`/category/${item?.categories[0].slug}`}
                       sx={{ color: "#1877F2" }}
                       fontSize={{ xs: "11px", sm: "12px" }}
-                      className="font-600"
+                      className="font-normal"
                     >
                       {useDecodeHtml(item?.categories[0]?.name)}
                     </Typography>

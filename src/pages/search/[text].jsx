@@ -91,7 +91,7 @@ const Search = ({ posts, rssItems, searchtext }) => {
             >
               <Typography
                 fontSize={{ xs: "28px", md: "38px" }}
-                className="font-semibold"
+                className="font-text-bold"
                 sx={{
                   color: "#080808",
                   borderBottom: "3px solid #1877F2",
@@ -113,7 +113,7 @@ const Search = ({ posts, rssItems, searchtext }) => {
                 >
                   <Typography
                     fontSize={{ xs: "20px", md: "22px" }}
-                    className="font-semibold"
+                    className="font-text-bold"
                   >
                     No Result Found!
                   </Typography>
@@ -158,7 +158,7 @@ const Search = ({ posts, rssItems, searchtext }) => {
                           },
                         }}
                         onClick={scrollToTop}
-                        className="font-semibold"
+                        className="font-text-bold"
                       >
                         Back to top
                       </Button>

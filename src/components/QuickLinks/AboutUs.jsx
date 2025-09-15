@@ -58,7 +58,7 @@ export const AboutUs = () => {
               cleaning up of the environment for all living beings.
             </Typography>
 
-            <Typography className="font-500" sx={textStyle}>
+            <Typography className="font-bold" sx={textStyle}>
               This team of committed professionals brings forth things as they
               happen to differentiate between claims and reality.
             </Typography>

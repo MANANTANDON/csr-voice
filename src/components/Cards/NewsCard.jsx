@@ -49,7 +49,7 @@ export const NewsCard = ({ news }) => {
           <Typography
             fontSize="13px"
             sx={{ color: "#000000", my: 1 }}
-            className="font-medium"
+            className="font-normal"
           >
             <Typography
               variant="span"
@@ -57,7 +57,7 @@ export const NewsCard = ({ news }) => {
               href={`/category/${news?.categories[0]?.slug}`}
               sx={{ color: "#1877F2" }}
               fontSize="13px"
-              className="font-medium"
+              className="font-bold"
             >
               {useDecodeHtml(news?.categories[0]?.name)}
             </Typography>
@@ -68,7 +68,7 @@ export const NewsCard = ({ news }) => {
             href={`/post/${news?.categories[0]?.slug}/${news?.slug}/${news?.id}`}
             fontSize="20px"
             lineHeight="26px"
-            className="font-semibold"
+            className="font-text-bold"
             sx={{
               overflow: "hidden",
               textOverflow: "ellipsis",

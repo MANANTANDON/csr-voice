@@ -45,7 +45,7 @@ export const Interviews = () => {
             >
               <Typography
                 fontSize={{ xs: "28px", md: "38px" }}
-                className="font-semibold"
+                className="font-text-bold"
                 sx={{ color: "#080808" }}
               >
                 Interviews
@@ -95,7 +95,7 @@ export const Interviews = () => {
                       <Typography
                         fontSize={{ xs: "20px", md: "26px" }}
                         lineHeight={{ xs: "28px", md: "32px" }}
-                        className="font-semibold"
+                        className="font-text-bold"
                         component={"a"}
                         href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
                         sx={{
@@ -116,7 +116,7 @@ export const Interviews = () => {
                       </Typography>
                       <Typography
                         fontSize={{ xs: "14px", md: "16px" }}
-                        className="font-medium"
+                        className="font-normal"
                         sx={{
                           overflow: "hidden",
                           textOverflow: "ellipsis",
@@ -132,7 +132,7 @@ export const Interviews = () => {
                       <Typography
                         sx={{ color: "#FFFFFF", mt: 1, mb: 2 }}
                         fontSize="12px"
-                        className="font-medium"
+                        className="font-normal"
                       >
                         <Typography
                           component={"a"}
@@ -145,7 +145,7 @@ export const Interviews = () => {
                             borderRadius: "4px",
                           }}
                           fontSize="12px"
-                          className="font-medium"
+                          className="font-normal"
                         >
                           {useDecodeHtml(posts[0]?.categories[0]?.name)}
                         </Typography>

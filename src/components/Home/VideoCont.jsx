@@ -87,7 +87,7 @@ export const VideoCont = () => {
               >
                 <Typography
                   fontSize={{ xs: "26px", md: "36px" }}
-                  className="font-semibold"
+                  className="font-text-bold"
                   sx={{ color: "#080808", borderBottom: "3px solid #1877F2" }}
                 >
                   Videos
@@ -119,7 +119,7 @@ export const VideoCont = () => {
               mb: 2,
             }}
           >
-            <Typography className="font-semibold" fontSize={"20px"}>
+            <Typography className="font-text-bold" fontSize={"20px"}>
               {useDecodeHtml(selectedVideoContent?.title)}
             </Typography>
             <IconButton onClick={handleClose}>

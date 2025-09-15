@@ -1,110 +1,64 @@
-/* Single font family with all weights and styles */
+/* Miller font family with all weights and styles */
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Thin.otf") format("opentype");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-ThinItalic.otf") format("opentype");
-  font-weight: 100;
-  font-style: italic;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Ultralight.otf") format("opentype");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-UltralightItalic.otf") format("opentype");
-  font-weight: 200;
-  font-style: italic;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Light.otf") format("opentype");
+  font-family: "Miller";
+  src: url("/fonts/mdr/Miller_Display_Light.otf") format("opentype");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-LightItalic.otf") format("opentype");
+  font-family: "Miller";
+  src: url("/fonts/mdr/Miller_Display_Light_Italic.otf") format("opentype");
   font-weight: 300;
   font-style: italic;
 }
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Regular.otf") format("opentype");
+  font-family: "Miller";
+  src: url("/fonts/mdr/Miller_Display_Roman.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-RegularItalic.otf") format("opentype");
+  font-family: "Miller";
+  src: url("/fonts/mdr/Miller_Display_Italic.otf") format("opentype");
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-MediumItalic.otf") format("opentype");
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Semibold.otf") format("opentype");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-SemiboldItalic.otf") format("opentype");
-  font-weight: 600;
-  font-style: italic;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Bold.otf") format("opentype");
+  font-family: "Miller";
+  src: url("/fonts/mdr/Miller_Display_Bold.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-BoldItalic.otf") format("opentype");
+  font-family: "Miller";
+  src: url("/fonts/mdr/Miller_Display_Bold_Italic.otf") format("opentype");
   font-weight: 700;
   font-style: italic;
 }
+
+/* Miller Text variants */
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Heavy.otf") format("opentype");
-  font-weight: 800;
+  font-family: "Miller Text";
+  src: url("/fonts/mdr/Miller_Text_Roman.otf") format("opentype");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-HeavyItalic.otf") format("opentype");
-  font-weight: 800;
+  font-family: "Miller Text";
+  src: url("/fonts/mdr/Miller_Text_Italic.otf") format("opentype");
+  font-weight: 400;
   font-style: italic;
 }
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-Black.otf") format("opentype");
-  font-weight: 900;
+  font-family: "Miller Text";
+  src: url("/fonts/mdr/Miller_Text_Bold.otf") format("opentype");
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/SF-Pro-Display-BlackItalic.otf") format("opentype");
-  font-weight: 900;
+  font-family: "Miller Text";
+  src: url("/fonts/mdr/Miller_Text_Bold_Italic.otf") format("opentype");
+  font-weight: 700;
   font-style: italic;
 }
 
@@ -124,10 +78,10 @@ a {
 }
 
 .post-cont {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 26px;
   text-align: justify;
-  font-family: "SF Pro Display" !important;
+  font-family: "Miller" !important;
 }
 
 .post-cont img {
@@ -135,42 +89,36 @@ a {
   height: 400px;
 }
 
-/* Better utility classes - you can use these OR just font-weight directly */
-.font-thin {
-  font-family: "SF Pro Display" !important;
-  font-weight: 100 !important;
-}
-.font-ultralight {
-  font-family: "SF Pro Display" !important;
-  font-weight: 200 !important;
-}
+/* Miller Display font utility classes */
 .font-light {
-  font-family: "SF Pro Display" !important;
+  font-family: "Miller" !important;
   font-weight: 300 !important;
 }
 .font-normal {
-  font-family: "SF Pro Display" !important;
+  font-family: "Miller" !important;
   font-weight: 400 !important;
 }
-.font-medium {
-  font-family: "SF Pro Display" !important;
-  font-weight: 500 !important;
-}
-.font-semibold {
-  font-family: "SF Pro Display" !important;
-  font-weight: 600 !important;
-}
 .font-bold {
-  font-family: "SF Pro Display" !important;
+  font-family: "Miller" !important;
   font-weight: 700 !important;
 }
-.font-heavy {
-  font-family: "SF Pro Display" !important;
-  font-weight: 800 !important;
+
+/* Miller Text font utility classes */
+.font-text {
+  font-family: "Miller Text" !important;
+  font-weight: 400 !important;
 }
-.font-black {
-  font-family: "SF Pro Display" !important;
-  font-weight: 900 !important;
+.font-text-bold {
+  font-family: "Miller Text" !important;
+  font-weight: 700 !important;
+}
+
+/* General Miller utility classes */
+.font-miller {
+  font-family: "Miller" !important;
+}
+.font-miller-text {
+  font-family: "Miller Text" !important;
 }
 
 @media (max-width: 500px) {

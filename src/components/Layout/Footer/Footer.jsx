@@ -80,7 +80,7 @@ export const Footer = () => {
                     <Typography
                       component="a"
                       href={item.link}
-                      className="font-medium"
+                      className="font-normal"
                       key={key}
                       sx={{ width: "fit-content" }}
                     >
@@ -104,7 +104,7 @@ export const Footer = () => {
                     <Typography
                       component="a"
                       href={item.link}
-                      className="font-medium"
+                      className="font-normal"
                       key={key}
                       sx={{ width: "fit-content" }}
                       fontSize={"16px"}

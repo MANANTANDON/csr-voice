@@ -20,7 +20,7 @@ export const TopContainer = ({ posts }) => {
         >
           <Typography
             fontSize={{ xs: "28px", md: "38px" }}
-            className="font-semibold"
+            className="font-text-bold"
             sx={{
               color: "#080808",
               borderBottom: "3px solid #1877F2",
@@ -92,7 +92,7 @@ export const TopContainer = ({ posts }) => {
                     href={`/post/${posts[0]?.categories[0]?.slug}/${posts[0]?.slug}/${posts[0]?.id}`}
                     fontSize={{ xs: "20px", md: "26px" }}
                     lineHeight={{ xs: "28px", md: "32px" }}
-                    className="font-semibold"
+                    className="font-text-bold"
                     sx={{
                       overflow: "hidden",
                       textOverflow: "ellipsis",
@@ -111,7 +111,7 @@ export const TopContainer = ({ posts }) => {
                   </Typography>
                   <Typography
                     fontSize={{ xs: "14px", md: "16px" }}
-                    className="font-medium"
+                    className="font-normal"
                     sx={{
                       overflow: "hidden",
                       textOverflow: "ellipsis",
@@ -127,7 +127,7 @@ export const TopContainer = ({ posts }) => {
                   <Typography
                     fontSize="12px"
                     sx={{ color: "#FFFFFF", mt: 1, mb: 2 }}
-                    className="font-medium"
+                    className="font-normal"
                   >
                     <Typography
                       component={"a"}
@@ -140,7 +140,7 @@ export const TopContainer = ({ posts }) => {
                         borderRadius: "4px",
                       }}
                       fontSize="12px"
-                      className="font-medium"
+                      className="font-normal"
                     >
                       {posts[0]?.categories[0]?.name}
                     </Typography>
@@ -207,7 +207,7 @@ export const TopContainer = ({ posts }) => {
                         href={`/post/${item?.categories[0]?.slug}/${item?.slug}/${item?.id}`}
                         fontSize={{ xs: "16px", sm: "18px" }}
                         lineHeight={{ xs: "22px", sm: "24px" }}
-                        className="font-semibold"
+                        className="font-text-bold"
                         sx={{
                           overflow: "hidden",
                           textOverflow: "ellipsis",
@@ -226,14 +226,14 @@ export const TopContainer = ({ posts }) => {
                       <Typography
                         fontSize="13px"
                         sx={{ color: "#000000", my: 1 }}
-                        className="font-medium"
+                        className="font-normal"
                       >
                         <Typography
                           component={"a"}
                           href={`/category/${item?.categories[0]?.slug}`}
                           sx={{ color: "#1877F2" }}
                           fontSize="13px"
-                          className="font-medium"
+                          className="font-bold"
                         >
                           {useDecodeHtml(item?.categories[0]?.name)}
                         </Typography>

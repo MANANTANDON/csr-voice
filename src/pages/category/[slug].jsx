@@ -86,7 +86,7 @@ const Category = ({ posts, rssItems, category }) => {
             >
               <Typography
                 fontSize={{ xs: "28px", md: "38px" }}
-                className="font-semibold"
+                className="font-text-bold"
                 sx={{
                   color: "#080808",
                   borderBottom: "3px solid #1877F2",
@@ -134,7 +134,7 @@ const Category = ({ posts, rssItems, category }) => {
                       },
                     }}
                     onClick={scrollToTop}
-                    className="font-semibold"
+                    className="font-text-bold"
                   >
                     Back to top
                   </Button>

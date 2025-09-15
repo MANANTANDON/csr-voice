@@ -54,7 +54,7 @@ export const Sectors = () => {
               >
                 <Typography
                   fontSize={{ xs: "28px", md: "38px" }}
-                  className="font-semibold"
+                  className="font-text-bold"
                   sx={{ color: "#080808" }}
                 >
                   {category?.name}

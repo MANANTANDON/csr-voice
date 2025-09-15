@@ -234,7 +234,7 @@ export const Header = () => {
         {SECTORS.map((sector, index) => (
           <MenuItem
             key={index}
-            className="font-medium"
+            className="font-normal"
             onClick={() => {
               router.push(sector.link);
               handleSectorsClose();
@@ -344,7 +344,7 @@ export const Header = () => {
                     },
                   }}
                   className={
-                    router.asPath === item.link ? "font-bold" : "font-medium"
+                    router.asPath === item.link ? "font-bold" : "font-normal"
                   }
                 >
                   {item?.name}
@@ -360,7 +360,7 @@ export const Header = () => {
                 <Typography
                   component="a"
                   href="/category/sectors"
-                  className="font-medium"
+                  className="font-normal"
                 >
                   Sectors
                 </Typography>
@@ -382,7 +382,7 @@ export const Header = () => {
                     <a
                       href={sector?.link}
                       style={{ width: "100%" }}
-                      className="font-medium"
+                      className="font-normal"
                     >
                       {sector.name}
                     </a>

@@ -22,7 +22,7 @@ export const TopMarquee = ({ marqueeData }) => {
               href={item?.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold"
+              className="font-text-bold"
               key={key}
               sx={{ color: "#FFFFFF", fontSize: { xs: "12px", md: "16px" } }}
             >

@@ -41,7 +41,7 @@ export const TnC = () => {
               the user or viewer of the CSRVoice and its affiliate website.
             </Typography>
 
-            <Typography className="font-semibold" sx={textStyle}>
+            <Typography className="font-text-bold" sx={textStyle}>
               The use of this website is subject to the following terms of use:
             </Typography>
 

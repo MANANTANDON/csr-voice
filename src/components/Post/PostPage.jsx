@@ -16,7 +16,7 @@ export const PostPage = ({ post }) => {
       <Box
         sx={{
           my: { xs: 2, md: 3 },
-          mx: { xs: 1, md: 5 },
+          mx: { xs: 1, md: 3 },
         }}
       >
         <Container
@@ -30,27 +30,32 @@ export const PostPage = ({ post }) => {
           <Box
             sx={{
               ml: { xs: -1, lg: 4 },
-              p: 2,
+              pl: 2,
+              py: 2,
             }}
           >
-            <Box>
-              <Typography
-                className="font-bold"
-                fontSize={{ xs: "24px", md: "38px" }}
-                lineHeight={{ xs: "32px", md: "45px" }}
-                sx={{ mt: { xs: 0, md: 2 } }}
-              >
-                {useDecodeHtml(post?.title)}
-              </Typography>
-            </Box>
-
-            <Box sx={{ my: 1 }}>
-              <Typography className="font-medium">
-                {useDecodeHtml(post?.excerpt)}
-              </Typography>
-            </Box>
             <Grid container>
               <Grid item size={{ xs: 12, lg: 8.5 }} sx={{}}>
+                <Box>
+                  <Typography
+                    className="font-bold"
+                    fontSize={{ xs: "24px", md: "36px" }}
+                    lineHeight={{ xs: "32px", md: "43px" }}
+                    sx={{ mt: { xs: 0, md: 2 } }}
+                  >
+                    {useDecodeHtml(post?.title)}
+                  </Typography>
+                </Box>
+
+                <Box sx={{ my: 1 }}>
+                  <Typography
+                    className="font-normal"
+                    fontSize={{ xs: "16px", md: "22px" }}
+                    lineHeight={{ xs: "24px", md: "30px" }}
+                  >
+                    {useDecodeHtml(post?.excerpt)}
+                  </Typography>
+                </Box>
                 <Box
                   sx={{
                     mt: { xs: 0, md: 2 },
@@ -65,13 +70,13 @@ export const PostPage = ({ post }) => {
                   <Typography
                     fontSize="14px"
                     sx={{ color: "#000000", mt: 1, mb: { xs: 2, md: 1 } }}
-                    className="font-medium"
+                    className="font-normal"
                   >
                     <Typography
                       variant="span"
                       sx={{ color: "#1877F2" }}
                       fontSize="14px"
-                      className="font-medium"
+                      className="font-bold"
                     >
                       {useDecodeHtml(post?.categories[0]?.name)}
                     </Typography>

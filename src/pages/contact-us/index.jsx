@@ -475,7 +475,7 @@ const Contactus = () => {
                               type="submit"
                               fullWidth
                               disabled={isSubmitting}
-                              className="font-semibold"
+                              className="font-text-bold"
                               sx={{
                                 textTransform: "none",
                                 bgcolor: "#1877f2",
