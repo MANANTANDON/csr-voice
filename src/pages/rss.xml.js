@@ -22,7 +22,7 @@ export async function getServerSideProps({ res }) {
   response?.data?.data?.map((post) => {
     feed?.item({
       title: useDecodeHtml(post?.title),
-      description: post?.excerpt,
+      description: useDecodeHtml(post?.excerpt),
       url: `${INIT_URI}${useFilteredCategories(post.categories)[0]?.slug}/${
         post.slug
       }/${post.id}`,
@@ -31,7 +31,7 @@ export async function getServerSideProps({ res }) {
   });
 
   // Send feed as XML
-  res.setHeader("Content-Type", "text/xml");
+  res.setHeader("Content-Type", "application/rss+xml; charset=UTF-8");
   res.write(feed.xml({ indent: true }));
   res.end();
 
